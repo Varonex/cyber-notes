@@ -4,6 +4,9 @@ site_url: https://Varonex.github.io/cyber-notes/
 site_description: Cybersecurity-related notes I made over time.
 site_author: Varonex
 
+repo_name: Varonex/cyber-notes
+repo_url: https://github.com/Varonex/cyber-notes
+
 theme:
     name: material
     language: en
@@ -42,7 +45,6 @@ markdown_extensions:
     -   pymdownx.snippets:
             base_path:
                 - docs
-            check_paths: true
 
     # Interprétations et parsing.
     - admonition
