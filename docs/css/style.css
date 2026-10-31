@@ -1,5 +1,5 @@
 /* Force tous les tableaux à occuper 100% de la largeur de la page. */
-.md-typeset__table
+.md-typeset__table, md-typeset__table *
 {
     width: 100%;
 }
