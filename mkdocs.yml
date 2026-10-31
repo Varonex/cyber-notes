@@ -33,11 +33,30 @@ theme:
 
   # Contenu du site.
     features:
+        # Navigation avancée.
         - navigation.indexes
         - navigation.top
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.sections
+        - navigation.expand
+        - navigation.path
+
+        # Amélioration sommaire.
+        - toc.integrate
+        - toc.follow
+
+        # Blocs de code.
         - content.code.copy
         - content.code.select
         - content.code.annotate
+
+        # Barre de recherche.
+        - search.suggest
+        - search.highlight
+        - search.share
 
 # Markdown additionnel.
 markdown_extensions:
