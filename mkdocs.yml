@@ -37,9 +37,6 @@ theme:
         - navigation.indexes
         - navigation.top
         - navigation.tracking
-        - navigation.sections
-        - navigation.expand
-        - navigation.path
 
         # Amélioration sommaire.
         - toc.integrate
