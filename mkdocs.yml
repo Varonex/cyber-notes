@@ -38,24 +38,28 @@ theme:
 
 # Markdown additionnel.
 markdown_extensions:
+    # Inclusions.
+    -   pymdownx.snippets:
+            base_path:
+                - docs
+            check_path: true
+
+    # Interprétations et parsing.
+    - admonition
+    - pymdownx.details
+
     - pymdownx.highlight:
         anchor_linenums: true
         line_spans: __span
         pygments_lang_class: true
 
     - pymdownx.inlinehilite
-    - pymdownx.snippets:
-            base_path:
-                - docs
 
     - pymdownx.superfences:
         custom_fences:
             - name: mermaid
               class: mermaid
               format: !!python/name:pymdownx.superfences.fence_code_format
-
-    - admonition
-    - pymdownx.details
 
     - pymdownx.tabbed:
           alternate_style: true
