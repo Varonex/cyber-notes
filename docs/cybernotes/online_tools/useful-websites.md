@@ -2,7 +2,7 @@
 > Certaines ressources présentées effectueront des actions passives, ce qui n'enfreint pas la loi. Cependant, d'autres sont plutôt actives, enfreignant ainsi la loi Godfrain 1988, pouvant mener à des poursuites pénales si utilisées contre un STAD non autorisé préalablement.
 > Il est de votre responsabilité de déterminer si une ressource est autorisée ou non. Cette page ne liste pas cette information.
 
-# Anonymité
+## Anonymité
 
 | Nom du site   | Description du site                                      | Lien                           |
 | ------------- | -------------------------------------------------------- | ------------------------------ |
@@ -11,13 +11,13 @@
 | TempMail      | Mail temporaire en readonly.                             | https://temp-mail.org/fr       |
 | Tor           | Navigateur.                                              | https://www.torproject.org/fr/ |
 
-# Exploits
+## Exploits
 
 | Nom du site | Description du site | Lien                       |
 | ----------- | ------------------- | -------------------------- |
 | Exploit DB  | Liste des exploits. | https://www.exploit-db.com |
 
-# Leaks
+## Leaks
 
 | Nom du site    | Description du site                   | Lien                       |
 | -------------- | ------------------------------------- | -------------------------- |
@@ -26,7 +26,7 @@
 | Intelx         | Répertorie des leaks.                 | https://intelx.io          |
 | LeakCheck      | Recherche les leaks par adresse mail. | https://leakcheck.io       |
 
-# OSINT
+## OSINT
 
 | Nom du site     | Description du site                                  | Lien                                                          |
 | --------------- | ---------------------------------------------------- | ------------------------------------------------------------- |
@@ -53,7 +53,7 @@
 | Wigle           | Reconnaissance wifi.                                 | https://wigle.net                                             |
 | Zoomeye         | Recherche d'endpoints via des filtres. Axé IoT.      | https://www.zoomeye.ai                                        |
 
-# Vulnérabilités
+## Vulnérabilités
 
 | Nom du site    | Description du site                               | Lien                                                         |
 | -------------- | ------------------------------------------------- | ------------------------------------------------------------ |

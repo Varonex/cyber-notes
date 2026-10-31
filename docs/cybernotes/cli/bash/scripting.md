@@ -1,9 +1,9 @@
 ```bash
 #!/bin/bash
-# Shebang pour préciser la shell.
+## Shebang pour préciser la shell.
 
 #
-# VARIABLES
+## VARIABLES
 #
 monInt=1
 maString="bonsoir"
@@ -13,7 +13,7 @@ monInterpolation="$PATH"
 monLitteral='$PATH' # N'interpole pas.
 
 #
-# ARRAYS
+## ARRAYS
 #
 monArr=("a" "b" "c")
 
@@ -29,7 +29,7 @@ unset "monArr[0]" # Prend le nom ici. Détruit la première case sans faire de s
 unset "monArr" # Détruit le tableau.
 
 #
-# DICTIONNAIRES
+## DICTIONNAIRES
 #
 
 declare -A monDico
@@ -40,7 +40,7 @@ valeurs=${monDico[@]}
 taille=${#monDico[@]}
 
 #
-# ARGUMENTS
+## ARGUMENTS
 #
 arg0=$0 # Unsafe (null).
 arg1="$1" # Safe.
@@ -49,11 +49,11 @@ nbArg="$#" # NB arguments.
 allArgs="$*" # Prend tous les args dans une même chaîne. Pas d'itération dans une boucle.
 allArgsSep="$@" # Fait une liste de tous les arguments. Une boucle ferait une itération sur chaque élément.
 
-# Décalage des paramètres ($1 est écrasé par $2 etc... $0 reste intact).
+## Décalage des paramètres ($1 est écrasé par $2 etc... $0 reste intact).
 shift
 
 #
-# EXPANSIONS DE VARIABLES
+## EXPANSIONS DE VARIABLES
 #
 var=""
 echo "${var:-default}" # Affiche default. Si var est vide, lit la 2e partie.
@@ -61,7 +61,7 @@ echo "${var:=default}" # Assigne default si var est vide.
 
 
 #
-# FONCTIONS
+## FONCTIONS
 #
 maFonction() {
 	a=1 # Assignation globale.
@@ -75,7 +75,7 @@ maFonction() {
 }
 
 #
-# APPEL DE FONCTIONS
+## APPEL DE FONCTIONS
 #
 maFonction 4 # Affiche 4 car echo de $1.
 monResultat=$(maFonction 5) # Stocke 5.
@@ -83,7 +83,7 @@ monResultat2=`maFonction 5` # Même chose qu'au dessus. Ancienne syntaxe.
 dernierCode="$?" # Récupère le dernier code. Comme maFonction est la dernière commande appelée, renvoie 0.
 
 #
-# IF
+## IF
 #
 if [ 1 ]; then
 	echo "Code"
@@ -94,26 +94,26 @@ else
 
 fi
 
-# Vieux comparateur, rustique.
+## Vieux comparateur, rustique.
 if [ -z "$0" -a -f "$1" ]; then
 fi
 
 [ -f -z -a -o ! -lt -gt -eq -ne ... ]
 
-# Plus moderne. Les comparaisons sont axées string. Donc "2" > "10" dans l'ordre lexicographique. On peut toujours utiliser -eq, -lt, -le, ...
+## Plus moderne. Les comparaisons sont axées string. Donc "2" > "10" dans l'ordre lexicographique. On peut toujours utiliser -eq, -lt, -le, ...
 if [[ "$0" == "" && -f "$1" || -f *.txt ]]; then
 fi
 
 [[ -f ... && || == != >= <= > < * =~ ]]
 
-# Axé uniquement arithmétique. Supporte tout comme en C.
+## Axé uniquement arithmétique. Supporte tout comme en C.
 if ((i == 21)); then
 fi
 
 ((i ++ -- / * + - >= <= > < != == && || & | > < \<< >>))
 
 #
-# WHILE
+## WHILE
 #
 i=0
 while ((i < 3)); do
@@ -121,7 +121,7 @@ while ((i < 3)); do
 	((i++))
 done
 
-# Lecture ligne à ligne. IFS met le field separator sur " ".
+## Lecture ligne à ligne. IFS met le field separator sur " ".
 while IFS=" " read -r line; do
 	echo "Ligne : $line"
 	
@@ -133,13 +133,13 @@ while IFS=" " read -r line; do
 	[[ "$line" == "" ]] && continue
 done
 
-# Feed du contenu dans le while.
+## Feed du contenu dans le while.
 while IFS=" " read -r line; do
 	echo "Ligne : $line"
 done <<< "Je peux feed ici des choses."
 
 #
-# UNTIL
+## UNTIL
 #
 until ((i >= 5)); do
 	echo "$i"
@@ -147,12 +147,12 @@ until ((i >= 5)); do
 done
 
 #
-# FOR
+## FOR
 #
 for i in {1..10}; do
 done
 
-# C-style.
+## C-style.
 for ((i=0; i<5; i++)); do
 done
 
@@ -160,7 +160,7 @@ for item in *; do
 done
 
 #
-# CASE
+## CASE
 #
 
 val="hi"
@@ -179,7 +179,7 @@ case "$val" in
 esac
 
 #
-# RANGES
+## RANGES
 #
 {1..10} # 1 à 10
 {01..010} # 01 à 010 (padding)
@@ -188,10 +188,10 @@ esac
 {a..e} # a à e
 
 #
-# ASSIGNATION TEMPORAIRE
+## ASSIGNATION TEMPORAIRE
 #
 
-# Si une commande intervient à la fin d'une assignation de variables, alors ces variables assignées sont temporaires et uniquement là pour la ligne.
+## Si une commande intervient à la fin d'une assignation de variables, alors ces variables assignées sont temporaires et uniquement là pour la ligne.
 IFS=" " read -r l
 
 k=1 sh -c 'echo $k' # 1. Si on fait direct echo, la variable ne sera pas initialisée à ce moment là.
@@ -200,10 +200,10 @@ echo "$k" # vide.
 a=1 b=2 c=3 echo "$a $b $c" # On peut chaîner.
 
 #
-# BLOC
+## BLOC
 #
 
-# Bloc de code comme dans n'importe quel langage. Capture et overwrite. Les variables déclarées ne sont pas propres au bloc.
+## Bloc de code comme dans n'importe quel langage. Capture et overwrite. Les variables déclarées ne sont pas propres au bloc.
 x=3
 cd /
 {
@@ -218,10 +218,10 @@ pwd # Affiche /home.
 echo "$x $z" # Affiche "1 3". Z existe.
 
 #
-# BLOC ARITHMETIQUE/LEGA-C.
+## BLOC ARITHMETIQUE/LEGA-C.
 #
 
-# Reprend les principes des blocs, mais utilise les choses arithmétiques faisables.
+## Reprend les principes des blocs, mais utilise les choses arithmétiques faisables.
 res=$x
 ((
 	res = res & x
@@ -233,12 +233,12 @@ res=$x
 echo "$res"
 
 #
-# SOUS-SHELL
+## SOUS-SHELL
 #
 
-# Invoque un shell imbriqué qui permet de redémarrer avec un environnement dédié.
-# Capture les variables, mais ne peut pas outsourcer une variable.
-# Les syntaxes $() et `` sont des sous-shell qui renvoient le résultat de stdout.
+## Invoque un shell imbriqué qui permet de redémarrer avec un environnement dédié.
+## Capture les variables, mais ne peut pas outsourcer une variable.
+## Les syntaxes $() et `` sont des sous-shell qui renvoient le résultat de stdout.
 cd /
 (
 	# Sous-shell.
@@ -253,7 +253,7 @@ pwd # Affiche /.
 echo "$x $y" # Affiche "1  ". Y est vide.
 
 #
-# VARIABLES SPECIALES
+## VARIABLES SPECIALES
 #
 
 IFS # Internal field separator.

@@ -2,15 +2,15 @@
 
 "Network Mapper". Outil d'énumération pour reconnaissance réseau.
 
-# Usage
+## Usage
 
 Lancer via :
 `nmap [options] ip`
 Les 1000 ports les plus fréquents par défaut.
 
-# Options
+## Options
 
-## Entrée
+### Entrée
 
 | Option             | Utilité                          |
 | ------------------ | -------------------------------- |
@@ -19,7 +19,7 @@ Les 1000 ports les plus fréquents par défaut.
 | `--exclude [...n]` | Exclure les hôtes `n`.           |
 | `--excludefile`    | Fichier d'exclusion.             |
 
-## Port
+### Port
 
 | Option            | Utilité                                                                   |
 | ----------------- | ------------------------------------------------------------------------- |
@@ -29,7 +29,7 @@ Les 1000 ports les plus fréquents par défaut.
 | `-r`              | Ordre séquentiel de scan.                                                 |
 | `--top-ports [n]` | Scanne les `n` ports les plus fréquents.                                  |
 
-## Scan d'hôtes
+### Scan d'hôtes
 
 | Option                                                   | Utilité                                        |
 | -------------------------------------------------------- | ---------------------------------------------- |
@@ -40,7 +40,7 @@ Les 1000 ports les plus fréquents par défaut.
 | `-n`                                                     | Aucune résolution DNS.                         |
 | `-R`                                                     | Toujours résolution DNS.                       |
 
-## Scan de ports
+### Scan de ports
 
 | Option                           | Utilité                                                                                          |
 | -------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -49,7 +49,7 @@ Les 1000 ports les plus fréquents par défaut.
 | `-sO`                            | Protocoles IP supportés.                                                                         |
 | `-sI [zombie host[:port]]`       | Scan ultra discret via hôtes zombies.                                                            |
 
-## Versioning
+### Versioning
 
 | Option | Utilité                               |
 | ------ | ------------------------------------- |
@@ -57,13 +57,13 @@ Les 1000 ports les plus fréquents par défaut.
 | `-O`   | Détection OS.                         |
 | `-A`   | Active `O`, `sV`, tracert et scripts. |
 
-## Performance
+### Performance
 
 | Option    | Utilité                            |
 | --------- | ---------------------------------- |
 | `-T[0-5]` | Performance. 0 = lent, 5 = rapide. |
 
-## Contournement
+### Contournement
 
 | Option                  | Utilité                    |
 | ----------------------- | -------------------------- |
@@ -73,7 +73,7 @@ Les 1000 ports les plus fréquents par défaut.
 | `--ttl [v]`             | Fixe le Time-To-Live.      |
 | `--spoof-mac [mac]`     | MAC spoofing.              |
 
-## Sortie
+### Sortie
 
 | Opton                                            | Utilité                                                                                                                                                                     |
 | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -86,7 +86,7 @@ Les 1000 ports les plus fréquents par défaut.
 | `--open`                                         | Liste uniquement les ports ouverts.                                                                                                                                         |
 | `--iflist`                                       | Donne les interfaces de l'hôte.                                                                                                                                             |
 
-## Divers
+### Divers
 
 | Option | Utilité           |
 | ------ | ----------------- |

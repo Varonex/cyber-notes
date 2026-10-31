@@ -1,4 +1,4 @@
-# Notation de base
+## Notation de base
 
 - `&` : asynchrone
 - `;` : fin de définition OU lancement séquentiel
@@ -28,9 +28,9 @@
 - `$$` : PID du processus actuel.
 - `$-` : Options actives de la shell.
 
-# Manipulation d'un flux
+## Manipulation d'un flux
 
-## Lecture du flux
+### Lecture du flux
 
 | Commande | Description                                                        | Options                                                                         | Descriptions Options                                                                                                                                                             |
 | -------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@
 | `more`   | Montre le contenu du flux<br>en pages.                             |                                                                                 |                                                                                                                                                                                  |
 | `tail`   | Affiche les dernières lignes<br>d'un flux.                         | `-n [n]`                                                                        | -Affiche les n dernières lignes.                                                                                                                                                 |
 
-## Traitement du flux
+### Traitement du flux
 
 | Commande       | Description                                                                                       | Options                                                  | Descriptions Options                                                                                                                                                                                    |
 | -------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -57,7 +57,7 @@
 | `uniq`         | Supprime les doublons<br>adjacents d'un flux.                                                     | `-c`<br>`-d`<br>`-f [n]`<br>`-i`<br>`-u`                 | -Compte les occurrences.<br>-Fait l'inverse.<br>-Skip les n premières lignes.<br>-Ignore la casse.<br>-Supprime les lignes avec duplicatas.                                                             |
 | `wc`           | Comptage de symboles<br>d'un flux.                                                                | `-c`<br>`-m`<br>`-l`<br>`-w`                             | -Octets.<br>-Caractères.<br>-Lignes.<br>-Mots.                                                                                                                                                          |
 
-# Système de fichiers
+## Système de fichiers
 
 | Commande             | Description                                                            | Options                                                                                                                                                                                                                                | Descriptions Options                                                                                                                                                                                                                                                                                                                                                             |
 | -------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,9 +83,9 @@
 | `touch [f]`          | Crée un fichier vide, ou<br>modifie sa dernière<br>date d'utilisation. | `-a`<br>`-m`<br>`-t`                                                                                                                                                                                                                   | -Change seulement la date<br>du dernier accès.<br>-Change seulement la date<br>modif.<br>-Change les deux<br>(`YYYYMMDDhhmm.ss`)                                                                                                                                                                                                                                                 |
 | `xxd`                | Lecteur hex.                                                           |                                                                                                                                                                                                                                        |                                                                                                                                                                                                                                                                                                                                                                                  |
 
-# Gestion des credentials
+## Gestion des credentials
 
-## Utilisateurs
+### Utilisateurs
 
 | Commande      | Description                                                                                                                                   | Options                                                                                                                                                   | Descriptions Options                                                                                                                                                                                                                                                                                                                                                              |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -98,7 +98,7 @@
 | `usermod [u]` | Modifie un user existant.                                                                                                                     | `-a(G)`<br>`-d [p]`<br>`-e [d]`<br>`-f [d]`<br>`-g [g]`<br>`-G [g]`<br>`-l [n]`<br>`-L`<br>`-m(d)`<br>`-p [p]`<br>`-r(G)`<br>`-s [s]`<br>`-u [i]`<br>`-U` | -Append le groupe de l'option G<br>sans override.<br>-Change le homedir.<br>-Expiration.<br>-Inactivité du mdp.<br>-GID principal.<br>-GID additionnels.<br>-Renomme le user.<br>-Lock.<br>-Déplace le contenu du homedir<br>(avec `-d`).<br>-Mdp assigné.<br>-Supprime le groupe de l'option G<br>du groupe sans enlever des autres.<br>-Shell.<br>-UID du user.<br>-Unlock.<br> |
 | `whoami`      | `id -un`                                                                                                                                      |                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                   |
 
-## Groupes
+### Groupes
 
 | Commande       | Description                                                                                                        | Options                                                      | Descriptions Options                                                                                                                                          |
 | -------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -109,7 +109,7 @@
 | `groupmod [g]` | Modifie un groupe existant.                                                                                        | `-a(U)`<br>`-g [i]`<br>`-n [n]`<br>`-U [u]`                  | -Append le user de l'option U<br>sans override.<br>-Renomme le groupe.<br>-GID du groupe.<br>-Users du groupe.                                                |
 | `groups [u]`   | Liste les groupes d'un utilisateur.                                                                                |                                                              |                                                                                                                                                               |
 
-## Autres manipulations
+### Autres manipulations
 
 | Commande     | Description                                                                 | Options                                                                                                  | Descriptions Options                                                                                                                                                                                                                                            |
 | ------------ | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -123,7 +123,7 @@
 | `sudo`       | Obtient les privilèges admin le<br>temps d'exécution d'une<br>commande.     | `-A`<br>`-b`<br>`-e`<br>`-E`<br>`-g [i]`<br>`-H`<br>`-l`<br>`-p [p]`<br>`-s [s]`<br>`-u [u]`             | -Prompt le mdp.<br>-Envoie le proc. en tâche de<br>fond.<br>-Mode édition de fichier.<br>-Préserve l'environnement.<br>-GID/Groupname.<br>-Homedir.<br>-Liste les sudoers.<br>-Mdp.<br>-Shell.<br>-UID/Username.<br>                                            |
 | `w`          | Liste les utilisateurs actuellement<br>connectés et ce qu'ils font.         | `-i`<br>`-p`<br>`-s`<br>`-t`                                                                             | -Donne les adresses IP.<br>-Liste le PID.<br>-Format minimaliste.<br>-Montre les terminaux.                                                                                                                                                                     |
 | `who`        | Liste les utilisateurs connectés.                                           | `-a`<br>`-b`<br>`-d`<br>`-l`<br>`-p`<br>`-s`<br>`-T`<br>`-u`                                             | -Affiche tout.<br>-Dernier boot système.<br>-Processus morts.<br>-Processus de login.<br>-Processus issus d'init.<br>-Format minimaliste.<br>-Statut de connexion.<br>-Utilisateurs connectés.                                                                  |
-# Miscellaneous
+## Miscellaneous
 | Commande      | Description                                                                                           | Options                                                          | Descriptions Options                                                                                                                                                                             |
 | ------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `clear`       | Supprime le contenu du terminal.                                                                      |                                                                  |                                                                                                                                                                                                  |

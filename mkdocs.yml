@@ -103,7 +103,6 @@ extra:
 nav:
     - CyberNotes:
         - cybernotes.md
-        - Introduction: cybernotes/cybernotes.md
         - CLI:
             - Bash:
                 - AWK: cybernotes/cli/bash/awk.md

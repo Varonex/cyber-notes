@@ -1,8 +1,8 @@
-# Niveaux
+## Niveaux
 
 Débute au niveau 0 jusqu'au niveau 33.
 
-## Niveau 0
+### Niveau 0
 
 De base, `ssh` s'utilise du style `ssh user@host`. L'ajout d'un port peut se faire via l'option `-p` car le port par défaut est 22.
 
@@ -13,7 +13,7 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 password: bandit0
 ```
 
-## Niveau 0 -> 1
+### Niveau 0 -> 1
 
 ```bash
 cd && cat readme
@@ -27,7 +27,7 @@ ssh bandit1@bandit.labs.overthewire.org -p 2220
 password: put.password.here
 ```
 
-## Niveau 1 -> 2
+### Niveau 1 -> 2
 
 Le shortcut `-` sert de référence au flux précédent.
 On a par exemple
@@ -45,7 +45,7 @@ Aussi `cat < -` marche.
 cat ./-
 ```
 
-## Niveau 2 -> 3
+### Niveau 2 -> 3
 
 Le nom du fichier est `--spaces in this filename--`.
 Faire
@@ -69,7 +69,7 @@ Comme pour le reste, pour lever l'ambiguïté, on peut aussi faire
 cat "./--spaces in this filename--"
 ```
 
-## Niveau 3 -> 4
+### Niveau 3 -> 4
 
 ```bash
 cd inhere
@@ -79,7 +79,7 @@ cat ...Hiding-From-You
 
 `ls -a` montre les fichiers cachés, qui sont des fichiers préfixés par `.`
 
-## Niveau 4 -> 5
+### Niveau 4 -> 5
 
 Pour détecter la propriété de lisibilité par les humains, on peut utiliser la commande `file`
 
@@ -89,7 +89,7 @@ file ./*
 ```
 Cette commande va donner des informations sur les fichiers.
 
-## Niveau 5 -> 6
+### Niveau 5 -> 6
 
 On va utiliser la commande `file` de nouveau en mode récursif
 
@@ -124,15 +124,15 @@ La meilleure solution reste `find` via
 
 ```bash
 find . -type f -size 1033c -readable ! -executable
-# -type f : fichier
-# -size 1033c : 1033 octets
-# -readable : lisible
-# ! -executable : PAS exécutable
+## -type f : fichier
+## -size 1033c : 1033 octets
+## -readable : lisible
+## ! -executable : PAS exécutable
 ```
 
 Cette commande est suffisante car un unique fichier a 1033 octets. Il s'agit de `./maybehere07/.file2`
 
-## Niveau 6 -> 7
+### Niveau 6 -> 7
 
 Pour chercher dans `man`, on peut faire des regexp avec `/`. `n` va au prochain et `N` va à l'ancienne occurrence !!!! `q` pour quitter.
 
@@ -145,13 +145,13 @@ Selon `man find`, on a:
 find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
 ```
 
-## Niveau 7 -> 8
+### Niveau 7 -> 8
 
 ```bash
 cat data.txt | grep millionth
 
 ```
-## Niveau 8 -> 9
+### Niveau 8 -> 9
 
 - La commande `uniq` factorise les lignes similaires **ADJACENTES !!!**. `uniq -c` permet de mettre en évidence le nombre de fois que cette ligne apparaît **DANS SON VOISINAGE**. `uniq -u` ne garde que les lignes **ADJACENTES** uniques, exactement ce qu'on cherche.
 - La commande `sort` fait un tri.
@@ -160,7 +160,7 @@ cat data.txt | grep millionth
 cat data.txt | sort | uniq -u
 ```
 
-## Niveau 9 -> 10
+### Niveau 9 -> 10
 
 - Le fichier contient du contenu binaire. Pour filtrer le contenu afin de ne garder que le texte affichable, on utilise `strings`.
 - Ensuite on peut utiliser `grep` pour déterminer les préfixes.
@@ -169,7 +169,7 @@ cat data.txt | sort | uniq -u
 strings data.txt | grep ===
 ```
 
-## Niveau 10 -> 11
+### Niveau 10 -> 11
 
 La commande `base64` permet de traiter ce contenu. Elle encode par défaut mais décode avec le flag `-d`.
 
@@ -177,27 +177,27 @@ La commande `base64` permet de traiter ce contenu. Elle encode par défaut mais 
 base64 -d data.txt
 ```
 
-## Niveau 11 -> 12
+### Niveau 11 -> 12
 
 La commande `tr` a pour but d'appliquer des transformations de **TRANSLATION** (ou suppression, ...) sur des chaînes. On a
 
 ```bash
-# Suppression
+## Suppression
 echo "Bonsoir" | tr -d 'o' # Bnsir
 
-# Substitution
+## Substitution
 echo "Bonsoir" | tr 'o' 'O' # BOnsOir
 
-# Squeezing
+## Squeezing
 echo "Boooonsoiiir" | tr -s 'oi' # Bonsoir
 
-# Shift
+## Shift
 echo "Bonsoir" | tr 'a-zA-Z' 'b-zaB-ZA' # Cpotpjs (shift d'un unique caractère)
 
-# Attention, le mapping est vraiment 1-1.
-# a-z s'expand abcdefgihklmnopqrstuvwxyz avec 26 caractères.
-# b-za s'expand bcdefghijklmnopqrstuvwxyza avec 26 caractères.
-# Le mapping fait JUSTE un checkup d'index de la source vers la destination !
+## Attention, le mapping est vraiment 1-1.
+## a-z s'expand abcdefgihklmnopqrstuvwxyz avec 26 caractères.
+## b-za s'expand bcdefghijklmnopqrstuvwxyza avec 26 caractères.
+## Le mapping fait JUSTE un checkup d'index de la source vers la destination !
 ```
 
 On obtient :
@@ -205,12 +205,12 @@ On obtient :
 ```bash
 cat data.txt | tr 'a-zA-Z' 'n-za-mN-ZA-M'
 
-# Mapping 1-1 par expansion des expressions et correspondance des index
-# abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-# nopqrstuvwyxzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM
+## Mapping 1-1 par expansion des expressions et correspondance des index
+## abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+## nopqrstuvwyxzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM
 ```
 
-## Niveau 12 -> 13
+### Niveau 12 -> 13
 
 Ce problème est NP-difficile.
 On va utiliser la commande xxd pour donner des dumps hexadécimaux du fichier data.txt.
@@ -225,7 +225,7 @@ Certains longs fichiers mettent en préambule des noms de fichier directement. C
 
 Après avoir fait ça de manière cyclique (utiliser `xxd` sur le fichier pour obtenir l'entête puis utiliser le bon utilitaire pour décompresser/extraire), on trouve le mdp.
 
-## Niveau 13 -> 14
+### Niveau 13 -> 14
 
 On peut utiliser `sftp` pour get le fichier, comme `scp`.
 
@@ -239,17 +239,17 @@ Une fois `sshkey.private` récupéré, on peut se connecter au 14 avec
 ssh -i sshkey.private bandit13@bandit.labs.overthewire.org -p 2220
 ```
 
-## Niveau 14 -> 15
+### Niveau 14 -> 15
 
 Comme on est dans `bandit14`, on peut lire le mdp.
 
 On lance un serveur `netcat` via `nc localhost 30000` et on colle le mdp.
 
-## Niveau 15 -> 16
+### Niveau 15 -> 16
 
 On lance un serveur supportant TLS via `openssl s_client -connect localhost:30001`
 
-## Niveau 16 -> 17
+### Niveau 16 -> 17
 
 On scanne le réseau en faisant
 
@@ -283,7 +283,7 @@ On la sauvegarde, et on se connecte au prochain niveau via
 ssh -i sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
 ```
 
-## Niveau 17 -> 18
+### Niveau 17 -> 18
 
 On utilise
 
@@ -293,7 +293,7 @@ diff passwords.old passwords.new
 
 La différence sur `passwords.new` correspond au mdp.
 
-## Niveau 18 -> 19
+### Niveau 18 -> 19
 
 La connexion est coupée instantanément via ssh. Mais comme `.bashrc` affecte le terminal en tant que tel, on peut tout-de-même faire un accès sftp et get le fichier.
 
@@ -304,7 +304,7 @@ ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
 
 ```
 
-## Niveau 19 -> 20
+### Niveau 19 -> 20
 
 Le bit `suid` est une permission de fichier (`4000`) qui permet d'overwrite les permissions réelles de l'utilisateur connecté exécutant un exécutable, par les permissions de l'utilisateur qui détient le fichier.
 
@@ -316,7 +316,7 @@ Le fichier est détenu par `bandit20`, et permet d'exécuter des commandes. En l
 
 Le fichier sera exécuté comme si `bandit20` le faisait, donnant des permissions extra !
 
-## Niveau 20 -> 21
+### Niveau 20 -> 21
 
 Il faut créer un serveur qui renvoie le mdp précédent. Pour ce faire, on peut faire
 
@@ -331,7 +331,7 @@ echo "<mdp>" | nc -l -p 1234 &
 L'usage de `&` rend le processus asynchrone la durée d'une lecture
 On peut ensuite faire `./suconnect 1234`
 
-## Niveau 21 -> 22
+### Niveau 21 -> 22
 
 Dans `/etc/cron.d`, on voit un fichier nommé `cronjob_bandit22`. En cattant son contenu, on voit
 
@@ -357,7 +357,7 @@ On obtient les divers syntaxes valables pour toutes les valeurs
 
 Au delà de ce rappel, on fait `cat /usr/bin/cronjob_bandit2.sh` et on voit le mdp.
 
-## Niveau 22 -> 23
+### Niveau 22 -> 23
 
 Rebelotte. On cat `/etc/cron.d/bandit22`, on cat le script lancé et ce script fait pleins d'opérations :
 
@@ -366,34 +366,34 @@ Rebelotte. On cat `/etc/cron.d/bandit22`, on cat le script lancé et ce script f
 
 myname=$(whoami) # renvoie bandit23 car cron exécute ceci avec le user bandit23
 mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1) # Le manque de "" ne gêne pas pour le echo a priori. On simule la commande :
-# echo "I am user bandit23" | md5sum et on récupère la première partie avant l'espace.
+## echo "I am user bandit23" | md5sum et on récupère la première partie avant l'espace.
 
 echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
 
-# Il copie le contenu du fichier dans /tmp/<hash>, avec <hash> le hash produit au dessus, qu'on cat.
+## Il copie le contenu du fichier dans /tmp/<hash>, avec <hash> le hash produit au dessus, qu'on cat.
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
 ```
 
-## Niveau 23 -> 24
+### Niveau 23 -> 24
 
 Rebelotte, le script est :
 
 ```bash
 #!/bin/bash
 
-# shopt = shell option
-# -s : active une option
-# nullglob : option reliée au fait qu'aucune erreur n'est produite lors d'un parcours d'un dossier vide
+## shopt = shell option
+## -s : active une option
+## nullglob : option reliée au fait qu'aucune erreur n'est produite lors d'un parcours d'un dossier vide
 shopt -s nullglob
 
-# Dans le contexte du script, vaut bandit24
+## Dans le contexte du script, vaut bandit24
 myname=$(whoami)
 
-# Met le wd sur /var/spool/bandit24/foo
+## Met le wd sur /var/spool/bandit24/foo
 cd /var/spool/"$myname"/foo || exit
 echo "Executing and deleting all scripts in /var/spool/$myname/foo:"
 
-# Parcourt i selon les noms de fichiers présents dans le wd
+## Parcourt i selon les noms de fichiers présents dans le wd
 for i in *.*
 do
 	# Évite . et ..
@@ -425,7 +425,7 @@ J'ai ensuite exécuté `chmod 777 script.sh` pour assurer l'exécution du script
 ATTENTION, il faut aussi vérifier si les autres ont accès au dossier `/tmp/tmp.<id>` !! Sinon aucune écrite ne se fera ! Donc `chmod 777 .`
 Enfin, j'ai copié ce script dans `/var/spool/bandit24/foo` et j'ai attendu une minute.
 
-## Niveau 24 -> 25
+### Niveau 24 -> 25
 
 On doit faire rentrer dans le serveur toutes les lignes `<mdp> $i` avec `$i` dans `[0, 9999]`. Le serveur voit la réponse et valide le tout.
 
@@ -441,7 +441,7 @@ done
 
 Et on ouvre un serveur netcat sur le port 30002 en lui donnant le contenu souhaité. On prend aussi le soin d'exclure les messages d'erreur (qui commencent par "Wrong") : `cat possibilites.txt | nc localhost 30002 | grep -v Wrong`
 
-## Niveau 25 -> 26
+### Niveau 25 -> 26
 
 On a un fichier `bandit26.sshkey` sur le bureau. Via `scp`, on récupère le fichier :
 `scp -P 2220 bandit25@bandit.labs.overthewire.org:/home/bandit25/bandit26.sshkey .`. En essayant de se connecter via `ssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p 2220`, on voit les messages habituels mais on se fait automatiquement kick. Essayer d'appender une commande ne marche pas.
@@ -467,32 +467,32 @@ De manière générale, sur `vi` et `vim`, on peut faire `:set shell=/bin/bash` 
 
 Rappel : quitter `vim` c'est `:q`.
 
-## Niveau 26 -> 27
+### Niveau 26 -> 27
 
 On a un script avec bit `suid`. On fait `./bandit27-do cat /etc/bandit_pass/bandit27`
 
-## Niveau 27 -> 28
+### Niveau 27 -> 28
 
 On a besoin de faire `git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo` avec le port après le `fqdn`.
 
-## Niveau 28 -> 29
+### Niveau 28 -> 29
 
 On clone le repo comme au dessus. Les credentials ne sont pas disponibles, mais on peut penser qu'il y a des commits précédents. On fait `git log` et on obtient le hash du commit précédent. On voit un commit qui parle d'une leak. De ce hash on peut faire `git checkout a1487fd098591dfa210ede70ba60f7093f47d20d` histoire d'y retourner, et voir qu'il y a le mdp dedans.
 
-## Niveau 29 -> 30
+### Niveau 29 -> 30
 
 Rebelotte. Ici on vérifie les branches via `git branch -a`.
 On voit que le message est "aucun mdp en prod", donc on peut aller checker la branche dev via `git checkout origin/dev`.
 En cattant le fichier, on gagne.
 
-## Niveau 30 -> 31
+### Niveau 30 -> 31
 
 J'ai essayé de lister les remotes avec `git remote -v`, rien à signaler. `git branch -a` ne donne rien, de même pour `git log`.
 Une notion pas utilisée à la fac mais beaucoup utilisée en prod, les **tags** !
 On liste les tags via `git tag` et on consulte la valeur d'un tag via `git show <tag>`.
 `git tag` donne "secret", et `git show secret` donne le mdp.
 
-## Niveau 31 -> 32
+### Niveau 31 -> 32
 
 Le but est de push un fichier nommé `key.txt`. `key.txt` est dans le `../../../../.gitignore`.
 On fait
@@ -504,11 +504,11 @@ git commit -m "h"
 git push
 ```
 
-## Niveau 32 -> 33
+### Niveau 32 -> 33
 
 On peut utiliser `$0` qui est une variable d'environnement. Les variables environnement sont écrites en majuscules. De ce fait, `$0` va pointer sur la shell en question car c'est le programme invoqué, et nous laisser y avoir accès. On s'attend à ce que ça répète le problème d'uppercase, mais la relancer le supprime. Cela peut s'expliquer par l'implémentation du programme, qui ne lance l'uppercase qu'au démarrage initial !
 On est dans une shell limitée. Faire `ls -l` montre `uppershell` avec bit `suid` qui appartient à `bandit33`. On peut donc essayer `whoami`/`id` et constater que la shell pense qu'on est bandit33. On peut récupérer le mdp via `cat /etc/bandit_pass/bandit33`.
 
-## Niveau 33 -> 34
+### Niveau 33 -> 34
 
 Terminado !!!
