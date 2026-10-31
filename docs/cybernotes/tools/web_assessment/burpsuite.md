@@ -1,0 +1,1 @@
+--8<-- "components/legal-disclaimers.md:full"

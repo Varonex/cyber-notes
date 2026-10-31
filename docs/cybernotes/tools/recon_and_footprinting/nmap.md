@@ -1,4 +1,4 @@
---8<-- "components/legal/legal-full.md"
+--8<-- "components/legal-disclaimers.md:full"
 
 "Network Mapper". Outil d'énumération pour reconnaissance réseau.
 
