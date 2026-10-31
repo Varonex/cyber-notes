@@ -1,3 +1,5 @@
+# Using awk as a file parser
+
 Handles multiple files at the same time in order to extract intel from them, using a separator. When providing several files, awk will concatenate all of them and manipulate them all at once. A `BEGIN` phase and `END` phase are provided to handle the lifecycle of the algorithm.
 - `-F` : Change the field separator.
 - `-f` : Reads awk code from a file.

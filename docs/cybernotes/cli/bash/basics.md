@@ -1,61 +1,69 @@
-## Notation de base
+# Bash basics
 
-- `&` : asynchrone
-- `;` : fin de définition OU lancement séquentiel
+## Basic notations
+
+- `&` : Run previous command asynchronously (`a & b`).
+- `;` : End of definition OR sequential calls (`a; b`).
 - `-` : STDIN-as-file.
-- `0` : STDIN.
-- `1` : STDOUT.
-- `2` : STDERR.
-- `>` : Redirection.
-- `1>` : Redirection STDOUT.
-- `2>` : Redirection STDERR.
-- `>&1` : Redirection STDERR dans STDOUT.
-- `>&2` : Redirection STDOUT dans STDERR.
-- `>>` : Redirection sans écrasement préalable du flux.
-- `<` : Apport d'un flux.
-- `<< EOL ... EOL` : Heredoc. `EOL` est arbitraire. Faire `<<-` supprime les tabulations.
-- `<< 'EOL' ... EOL` : Heredoc sans interprétation des variables.
-- `<<<` : Herestring. Équivalent à `echo ... |`.
-- `<(...)` : Sous commande qui sera interprétée comme un **fichier**. `diff <(a) <(b)` avec a et b des commandes. Si la commande attend un flux, il faut préfixer par `<` pour le convertir.
-- `$(...)` : Sous commande qui retourne son résultat de stdout. \`...\` est un équivalent. 
-- `--` : Fin interprétation des arguments.
-- `!n` : Exécute la n-ième commande issue de l'historique.
-- `!-n` : Exécute la n-ième commande en partant de la fin.
-- `!chaine` : Exécute la dernière commande correspondant à `chaine`.
-- `!!` : Exécute la dernière commande.
-- `!?chaine` : Exécute la dernière commande qui contient `chaine` dans l'invocation.
-- `!$` : Récupère le dernier argument de la commande exécutée avant. Pareil que `$_`.
-- `$$` : PID du processus actuel.
-- `$-` : Options actives de la shell.
+- `0` : STDIN. Common input.
+- `1` : STDOUT. Common output.
+- `2` : STDERR. Error output.
+- `>[s]` : Redirects STDOUT and STDERR in a file by rewriting its content.
+- `1>[s]` : Redirects STDOUT to another stream.
+- `2>[s]` : Redirects STDERR to another stream.
+- `>&1` : Redirects STDERR in STDOUT.
+- `>&2` : Redirects STDOUT in STDERR.
+- `>>[s]` : Appends STDOUT and STDERR in a file.
+- `<` : Stream import.
+- `<< EOL ... EOL` : Heredoc. `EOL` is an arbitrary markup symbol. `<<-` deletes tabs that could be present in the `...` section. Useful to maintain indentation without interpreting tabs.
+- `<< 'EOL' ... EOL` : Heredoc without interpreting variables.
+- `<<<` : Herestring. Equivalent to `echo ... |`.
+- `<(...)` : Subcommand which will be interpreted as a **file**. Eg: `diff <(a) <(b)` with `a` and `b` as commands. If the command expects a stream, you must prefix this query with `<` to convert `<(...)` to a file.
+- `$(...)` : Subcommand whose result will be returned directly instead of being output in STDOUT. \`...\` is an older syntax. 
+- `--` : Stop interpreting arguments. Useful if your text features `$` or any other symbol : `echo -- "$dollar"` will output "$dollar".
+- `!n` : Runs the n-th command from the command history.
+- `!-n` : Runs the n-th command from the command history, in reverse order.
+- `!cmd` : Runs the last command that begins with `cmd`.
+- `!?cmd[?]` : Runs the last command containing `cmd`. If additional options are provided but should not be in the search query, a secondary `?` is required to terminate the search query before providing additional elements.
+- `!!` : Executes the last command.
+- `!$` : Fetches the last argument from the last command.
+- `!...:p` : Fetches the desired command but does not execute it.
+- `$_` : Bash equivalent to `!$`. Usable in scripts.
+- `$$` : Current process PID.
+- `$-` : Current active shell options.
 
-## Manipulation d'un flux
+!!! Note "Enumerating in a command"
+	When providing elements in a command, you can easily enumerate ranges via different techniques.
+	`a,b,c` **without spaces** helps to enumerate explicitly.
+	`a-c`; `1-25` helps to explicit ranges.
+## Handling a stream
 
-### Lecture du flux
+### Reading from a stream
 
-| Commande | Description                                                        | Options                                                                         | Descriptions Options                                                                                                                                                             |
-| -------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cat`    | Montrer tout le contenu<br>d'un flux.                              | `-A`<br>`-e`<br>`-E`<br>`-t`<br>`-T`<br>`-v`                                    | -`-vET`<br>-`-vE`<br>-Met $ à chaque fin de ligne.<br>-`-vT`<br>-Affiche les tabs.<br>-Affiche les chars spéciaux.                                                               |
-| `head`   | Affiche les premières lignes<br>d'un flux.                         | `-n [n]`                                                                        | -Affiche les n premières lignes.                                                                                                                                                 |
-| `less`   | Montre le contenu du flux<br>en pages. Plus élaboré<br>que `more`. | `esp`<br>`down`<br>`b`<br>`up`<br><br>`/[q]`<br>`?[q]`<br>`n`<br>`N`<br><br>`q` | -Page d'après.<br>-Ligne d'après.<br>-Page d'avant.<br>-Ligne d'avant.<br><br>-Recherche avant.<br>-Recherche arrière.<br>-Prochain terme.<br>-Précédent terme.<br><br>-Quitter. |
-| `more`   | Montre le contenu du flux<br>en pages.                             |                                                                                 |                                                                                                                                                                                  |
-| `tail`   | Affiche les dernières lignes<br>d'un flux.                         | `-n [n]`                                                                        | -Affiche les n dernières lignes.                                                                                                                                                 |
+| Command    | Description                                                                                      | Notable options                                                                                                                                                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cat [s]`  | Show the content of a stream.                                                                    | `-A` : `-vET`<br>`-e` : `-vE`<br>`-E` : Puts `$` at the end of each line.<br>`-t` : `-vT`<br>`-T` : Displays tabs.<br>`-v` : Displays special characters.                                                                                |
+| `head [s]` | Displays the first lines of a stream. By default, displays the first 10 lines.                   | `-n [n]` : Displays the first `n` lines.                                                                                                                                                                                                 |
+| `less [s]` | Shows the content of a stream by using a paging system. More elaborated than the `more` command. | `esp` : Next page.<br>`down` : Next line.<br>`b` : Previous page.<br>`up` : Previous line.<br><br>`/[q]` : Forward search query.<br>`?[q]` : Reversed search query.<br>`n` : Next element.<br>`N` : Previous element.<br><br>`q` : Quit. |
+| `more [s]` | Displays the content of a stream by using a paging system.                                       |                                                                                                                                                                                                                                          |
+| `tail [s]` | Displays the last lines of a stream. By default, displays the first 10 lines.                    | `-n [n]` : Displays the last `n` lines.                                                                                                                                                                                                  |
 
-### Traitement du flux
+### Transforming a stream
 
-| Commande       | Description                                                                                       | Options                                                  | Descriptions Options                                                                                                                                                                                    |
-| -------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `base64`       | Manipule la base 64.                                                                              | `-d`<br>`-i`                                             | -Décode.<br>-Ignore le non alphabétique.                                                                                                                                                                |
-| `cut`          | Coupe les sections d'un flux.                                                                     | `-d [d]`<br>`-f [i]`                                     | -Délimiteur de split.<br>- Indexe du split.                                                                                                                                                             |
-| `diff [o]`     | Différences entre deux flux.                                                                      | `-a`<br>`-q`                                             | -Traiter les fichiers comme du texte.<br>-Bref.                                                                                                                                                         |
-| `echo [s]`     | Ressort le flux.                                                                                  | `-e`<br>`-E`                                             | -Pretty display.<br>-Désactive l'interprétation des<br>caractères spéciaux.                                                                                                                             |
-| `egrep [p]`    | Alias à `grep -E`                                                                                 |                                                          |                                                                                                                                                                                                         |
-| `grep [p]`     | Lit chaque ligne du flux <br>et  matche selon le<br>string p.                                     | `-c`<br>`-E`<br>`-i`<br>`-m [n]`<br>`-n`<br>`-s`<br>`-v` | -Compte le nb de matches.<br>-Active le regex.<br>-Insensible à la casse.<br>-Nb max de résultats.<br>-Numéro de ligne.<br>-Supprime les erreurs.<br>-Fait l'inverse.                                   |
-| `sed [p]`      | Filtre et transforme le flux.<br>`s/find/replace/g`                                               | `-e`<br>`-i`                                             | -Enchaîne plusieurs expressions.<br>-Modifie directement le flux.                                                                                                                                       |
-| `sort`         | Trie le flux.                                                                                     | `-c`<br>`-f`<br>`-h`<br>`-M`<br>`-n`<br>`-r`<br>`-u`     | -Vérifie si c'est trié au lieu de trier.<br>-Insensible à la casse.<br>-Tri naturel avec notation (k, G, ...)<br>-Tri comme les mois.<br>-Tri numérique.<br>-Reverse de tri.<br>-Unicité (voir `uniq`). |
-| `strings [s]`  | Ne conserve que les<br>caractères lisibles.                                                       | `-a`                                                     | -Scan de tout le fichier.                                                                                                                                                                               |
-| `tr [a] [[b]]` | Translation de l'alphabet `a`<br>dans l'alphabet `b`.<br>Peut s'utiliser sans `b`<br>ssi options. | `-d`<br>`-s`<br>`-t`                                     | -Supprime.<br>-Réduit les répétitions.<br>-Tronque a pour que ça matche la longueur de b.                                                                                                               |
-| `uniq`         | Supprime les doublons<br>adjacents d'un flux.                                                     | `-c`<br>`-d`<br>`-f [n]`<br>`-i`<br>`-u`                 | -Compte les occurrences.<br>-Fait l'inverse.<br>-Skip les n premières lignes.<br>-Ignore la casse.<br>-Supprime les lignes avec duplicatas.                                                             |
-| `wc`           | Comptage de symboles<br>d'un flux.                                                                | `-c`<br>`-m`<br>`-l`<br>`-w`                             | -Octets.<br>-Caractères.<br>-Lignes.<br>-Mots.                                                                                                                                                          |
+| Command            | Description                                                                                            | Notable options                                                                                                                                                                                                                                                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `base64 [s]`       | Manipulates base 64 strings.                                                                           | `-d` : Decode mode.<br>`-i` : Ignores non-alphabetical characters.                                                                                                                                                                                                        |
+| `cut [s]`          | Cuts sections of a stream via a field separator.                                                       | `-d [d]` : Defines the field separator.<br>`-f [i]` : Split range to fetch.                                                                                                                                                                                               |
+| `diff [a] [b]`     | Differences between two streams.                                                                       | `-a` : Handles files as text.<br>`-q` : Brief explanation.                                                                                                                                                                                                                |
+| `echo [s]`         | Outputs a stream.                                                                                      | `-e` : Pretty display.<br>`-E` : Disables special chars parsing (`\n`, ...).                                                                                                                                                                                              |
+| `egrep [p] [s]`    | `grep -E [p]`                                                                                          |                                                                                                                                                                                                                                                                           |
+| `grep [p] [s]`     | Reads each line of a stream and keeps lines that match the desired query.                              | `-c` : Count the amount of matching elements.<br>`-E` : Enables regex.<br>`-i` : Case insensitive.<br>`-m [n]` : Maximum amount of results.<br>`-n` : Outputs line number.<br>`-s` : Removes errors from output.<br>`-v` : Only filters lines that don't match the query. |
+| `sed [p] [s]`      | Filters & transforms the stream via a complex query.<br>`s/find/replace/g`                             | `-e` : Chain expressions.<br>`-i` : Modify the stream in place.                                                                                                                                                                                                           |
+| `sort [s]`         | Sorts the stream.                                                                                      | `-c` : Only verifies if the stream is sorted without sorting it.<br>`-f` : Case insensitive.<br>`-h` : Natural sorting.<br>`-M` : Month-like sorting.<br>`-n` : Numeric sorting.<br>`-r` : Reverse the sorting order.<br>`-u` : Enables unicity.                          |
+| `strings [s]`      | Only keeps human-readable characters.                                                                  | `-a` : Scans all the steam.                                                                                                                                                                                                                                               |
+| `tr [a] [[b]] [s]` | Translates from alphabet `a` to alphabet `b`.<br>`b` can be omitted if necessary options are provided. | `-d` : Delete mode.<br>`-s` : Reduces repeating patterns.<br>`-t` : Truncates `a` to match `b`'s length.                                                                                                                                                                  |
+| `uniq [s]`         | Deletes **ADJACENT** duplicates of a stream.                                                           | `-c` : Counts the occurrences.<br>`-d` : Only keeps lines with adjacent duplicates.<br>`-f [n]` : Skips the `n` first lines.<br>`-i` : Case insensitive.<br>`-u` : Deletes adjacent duplicates from the stream to only keep one adjacent occurrence.                      |
+| `wc`               | Counts the symbols of a stream.                                                                        | `-c` : Bytes.<br>`-m` : Chars.<br>`-l` : Lines.<br>`-w` : Words.                                                                                                                                                                                                          |
 
 ## Système de fichiers
 
