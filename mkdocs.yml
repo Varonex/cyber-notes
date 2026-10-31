@@ -42,7 +42,7 @@ markdown_extensions:
     -   pymdownx.snippets:
             base_path:
                 - docs
-            check_path: true
+            check_paths: true
 
     # Interprétations et parsing.
     - admonition
