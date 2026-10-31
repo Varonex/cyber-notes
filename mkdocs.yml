@@ -56,9 +56,9 @@ theme:
 # Markdown additionnel.
 markdown_extensions:
     # Inclusions.
-    -   pymdownx.snippets:
-            base_path:
-                - docs
+    - pymdownx.snippets:
+        base_path:
+            - docs
 
     # Interprétations et parsing.
     - admonition
@@ -78,11 +78,16 @@ markdown_extensions:
               format: !!python/name:pymdownx.superfences.fence_code_format
 
     - pymdownx.tabbed:
-          alternate_style: true
+        alternate_style: true
 
     - pymdownx.emoji:
         emoji_index: !!python/name:material.extensions.emoji.twemoji
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+    # Params modules features.
+    - toc:
+        permalink: true
+        toc_depth: 3
 
 
 # Liaison CSS.
@@ -113,33 +118,33 @@ nav:
             - Web:
                 - Client:
                     - "Cross Site Scripting (XSS)": cybernotes/pentest/web/client/xss.md
-                    - Server:
-                        - "Path Traversal": cybernotes/pentest/web/server/path-traversal.md
-                        - "SQL Injections (SQLi)": cybernotes/pentest/web/server/sqli.md
+                - Server:
+                    - "Path Traversal": cybernotes/pentest/web/server/path-traversal.md
+                    - "SQL Injections (SQLi)": cybernotes/pentest/web/server/sqli.md
 
         - Tools:
             - "Credentials & Cracking":
-                - Hashcat: cybernotes/tools/hashcat.md
-                - "John The Ripper": cybernotes/tools/john.md
+                - Hashcat: cybernotes/tools/credentials_and_cracking/hashcat.md
+                - "John The Ripper": cybernotes/tools/credentials_and_cracking/john.md
             - "Post-Exploitation & AD":
-                - Impacket: cybernotes/tools/impacket.md
-                - Metasploit: cybernotes/tools/metasploit.md
+                - Impacket: cybernotes/tools/postexploitation_and_ad/impacket.md
+                - Metasploit: cybernotes/tools/postexploitation_and_ad/metasploit.md
             - "Recon & Footprinting":
-                - Amass: cybernotes/tools/amass.md
-                - Masscan: cybernotes/tools/masscan.md
-                - NMap: cybernotes/tools/nmap.md
-                - Subfinder: cybernotes/tools/subfinder.md
+                - Amass: cybernotes/tools/recon_and_footprinting/amass.md
+                - Masscan: cybernotes/tools/recon_and_footprinting/masscan.md
+                - NMap: cybernotes/tools/recon_and_footprinting/nmap.md
+                - Subfinder: cybernotes/tools/recon_and_footprinting/subfinder.md
             - "Traffic & Analysis":
-                - Wireshark: cybernotes/tools/wireshark.md
+                - Wireshark: cybernotes/tools/traffic_and_analysis/wireshark.md
             - "Vulnerability Scanning":
-                - FFUF: cybernotes/tools/ffuf.md
-                - GoBuster: cybernotes/tools/gobuster.md
-                - Nuclei: cybernotes/tools/nuclei.md
+                - FFUF: cybernotes/tools/vulnerability_scanning/ffuf.md
+                - GoBuster: cybernotes/tools/vulnerability_scanning/gobuster.md
+                - Nuclei: cybernotes/tools/vulnerability_scanning/nuclei.md
             - "Web Assessment":
-                - "Burp Suite": cybernotes/tools/burpsuite.md
-                - SQLMap: cybernotes/tools/sqlmap.md
+                - "Burp Suite": cybernotes/tools/web_assessment/burpsuite.md
+                - SQLMap: cybernotes/tools/web_assessment/sqlmap.md
             - "Wireless Security":
-                - "Aircrack-ng": cybernotes/tools/aircrack-ng.md
+                - "Aircrack-ng": cybernotes/tools/wireless_security/aircrack-ng.md
 
         - "Useful websites": cybernotes/online_tools/useful-websites.md
 
