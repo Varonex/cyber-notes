@@ -2,4 +2,5 @@
 .md-typeset__table, .md-typeset__table table:not([class])
 {
     width: 100%;
+    display: table;
 }
