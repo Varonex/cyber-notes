@@ -35,9 +35,9 @@ theme:
     features:
         # Navigation avancée.
         - navigation.indexes
-        - navigation.sections
         - navigation.top
         - navigation.tracking
+        - navigation.footer
 
         # Amélioration sommaire.
         - toc.integrate
