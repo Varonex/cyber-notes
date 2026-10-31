@@ -83,21 +83,41 @@ extra_javascript:
 extra:
     generator: false
 
+# Navigation aisée.
 nav:
     - CyberNotes:
-        - index.md
-        - Introduction: cybernotes/index.md
+        - cybernotes.md
+        - Introduction: cybernotes/cybernotes.md
         - CLI:
-              - Bash:
-                    - AWK: cybernotes/cli/bash/awk.md
-                    - Basics: cybernotes/cli/bash/basics.md
-                    - Networking: cybernotes/cli/bash/networking.md
-                    - Scripting: cybernotes/cli/bash/scripting.md
+            - Bash:
+                - AWK: cybernotes/cli/bash/awk.md
+                - Basics: cybernotes/cli/bash/basics.md
+                - Networking: cybernotes/cli/bash/networking.md
+                - Scripting: cybernotes/cli/bash/scripting.md
         - Pentest:
-              - Web:
-                    - Client:
-                          - "Cross Site Scripting (XSS)": cybernotes/pentest/web/client/xss.md
+            - Web:
+                - Client:
+                    - "Cross Site Scripting (XSS)": cybernotes/pentest/web/client/xss.md
                     - Server:
-                          - "Path Traversal": cybernotes/pentest/web/server/path-traversal.md
-                          - "SQL Injections (SQLi)": cybernotes/pentest/web/server/sqli.md
+                        - "Path Traversal": cybernotes/pentest/web/server/path-traversal.md
+                        - "SQL Injections (SQLi)": cybernotes/pentest/web/server/sqli.md
+        - Tools:
+            - "Aircrack-ng": cybernotes/tools/aircrack-ng.md
+            - Amass: cybernotes/tools/amass.md
+            - "Burp Suite": cybernotes/tools/burpsuite.md
+            - FFUF: cybernotes/tools/ffuf.md
+            - GoBuster: cybernotes/tools/gobuster.md
+            - Hashcat: cybernotes/tools/hashcat.md
+            - Impacket: cybernotes/tools/impacket.md
+            - "John The Ripper": cybernotes/tools/john.md
+            - Masscan: cybernotes/tools/masscan.md
+            - Metasploit: cybernotes/tools/metasploit.md
+            - NMap: cybernotes/tools/nmap.md
+            - Nuclei: cybernotes/tools/nuclei.md
+            - SQLMap: cybernotes/tools/sqlmap.md
+            - Subfinder: cybernotes/tools/subfinder.md
+            - Wireshark: cybernotes/tools/wireshark.md
 
+        - Writeups:
+            - "Over The Wire":
+                - Bandit: cybernotes/writeups/over_the_wire/bandit.md
