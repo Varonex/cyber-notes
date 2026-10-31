@@ -44,7 +44,10 @@ markdown_extensions:
         pygments_lang_class: true
 
     - pymdownx.inlinehilite
-    - pymdownx.snippets
+    - pymdownx.snippets:
+            base_path:
+                - docs
+
     - pymdownx.superfences:
         custom_fences:
             - name: mermaid
@@ -53,7 +56,6 @@ markdown_extensions:
 
     - admonition
     - pymdownx.details
-    - pymdownx.blocks.admonition
 
     - pymdownx.tabbed:
           alternate_style: true
