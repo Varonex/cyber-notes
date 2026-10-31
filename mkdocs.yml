@@ -112,7 +112,7 @@ nav:
                 - AWK: cybernotes/cli/bash/awk.md
                 - Basics: cybernotes/cli/bash/basics.md
                 - Networking: cybernotes/cli/bash/networking.md
-                - Scripting: cybernotes/cli/bash/scripting.md+
+                - Scripting: cybernotes/cli/bash/scripting.md
 
         - Pentest:
             - Web:
