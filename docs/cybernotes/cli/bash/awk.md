@@ -1,130 +1,153 @@
-Traitement de plusieurs fichiers et division de chaque ligne en colonnes selon un séparateur.
-- `-F` : changer le séparateur.
-- `-f` : lire le code awk depuis un fichier.
-- `-v` : injecter une variable (`-v var=val)`.
-
+Handles multiple files at the same time in order to extract intel from them, using a separator. When providing several files, awk will concatenate all of them and manipulate them all at once. A `BEGIN` phase and `END` phase are provided to handle the lifecycle of the algorithm.
+- `-F` : Change the field separator.
+- `-f` : Reads awk code from a file.
+- `-v` : Inject a variable to the awk program (`-v var=val)`.
 ```bash
-awk -F ";" '
-	# Commentaire.
+# Comment.
 	
-	# Création de fonctions.
-	function carre(x) { return x*x }
+# Function declaration.
+function square(x)
+{
+	return x*x
+}
+
+# Code ran at the very beginning (before file parsing).
+BEGIN
+{
+	# We cannot access file-related environment variables here yet.
+		
+	# FS is the variable that stores the field separator. Overriding it will cut each line differently. When invoking awk from the terminal, defined via -F flag.
+	print FS
+		
+	# Print field separator. Can be overridden. Space by default.
+	print OFS
+}
 	
-	# Code lu dès le tout début.
-	BEGIN
+# The following code is executed for each row.
+{
+	# $0 = all the line.
+	print $0
+		
+	# Displays $0 (if nothing is provided).
+	print
+		
+	# $i = i-th element. We can litterally index "$i" in a for-loop to go through every argument.
+	print $1
+		
+	# NF displays the amount of fields in the row, and $NF gives the value of the last field. This is logical since $NF would be $5 (same as $i in for loops).
+	print NF, $NF
+		
+	 # NR outputs the row number AFTER ALL FILES ARE CONCATENATED, and FNR displays the row number FOR EACH FILE.
+	print NR, FNR
+}
+	
+# Conditional statement. Each line that respects this condition will get fed in the following code.
+$1 == "Hi"
+{
+	# C-style ifs.
+	if ($1 != "Hi")
 	{
-		# Aucun accès aux variables d\'environnement relatives à la lecture du fichier.
-		
-		# Variable qui gère le séparateur mis via -F. Overridable ici.
-		print FS
-		
-		# Variable de sortie via print. Par défaut, c\'est l\'espace.
-		print OFS
+		print "Cannot happen"
 	}
-	
-	# Code lu pour chaque ligne.
+	else if ($1 == "Hi")
 	{
-		# $0 = toute la ligne.
-		print $0
-		
-		# Affiche $0.
-		print
-		
-		# $i = ième elm. On peut indexer via littéralement $i (boucle pour etc...)
-		print $1
-		
-		# Donne le nombre de champs sur la ligne, et donne la valeur de la dernière ligne.
-		print NF, $NF
-		
-		# Donne le numéro de la ligne globale, et le numéro de la ligne par fichier donné.
-		print NR, FNR
+		print "Always happens"
 	}
-	
-	# Code lu si le premier élément est "Hi". Bloc conditionnel.
-	$1 == "Hi"
+	else
 	{
-		# Boucle pour.
-		for (i = 1; i <= NF; i++)
-		{
-			# $i permet d\'accéder au champ i.
-			print "Colonne " i " : " $i
-		}
+		print "Impossible to reach"
+	}
+
+	# C-style for loop.
+	for (i = 1; i <= NF; i++)
+	{
+		# $i accesses field i.
+		print "Column " i " : " $i
+	}
 		
-		# Boucle while.
-		i = 1
-		while (i <= NF)
-		{
-			print "Colonne " i " : " $i
-			i++
+	# C-style while.
+	i = 1
+	while (i <= NF)
+	{
+		print "Column " i " : " $i
+		i++
 			
-			if (i == 0)
-			{
-				break
-			}
-		}
-		
-		i = 1
-		do
+		if (i == 0)
 		{
-			print "Colonne " i " : " $i
-			i++
-			continue
+			break
 		}
-		while (i <= NF)
 	}
 	
-	# Code lu si le premier élément suit le regex. Bloc conditionnel.
-	$1 ~ /aeiouy/
+	# C-style do/while.	
+	i = 1
+	do
 	{
-		# Skip la ligne.
-		next
+		print "Column " i " : " $i
+		i++
+		continue
 	}
+	while (i <= NF)
+}
+
+# Same as above, but done with a regex.
+$1 ~ /aeiouy/
+{
+	# Skip line.
+	next
+}
+
+# Code that is read after parsing all the lines.
+END
+{
+	# Arrays. Indices should always start at 1 in awk.
+	t[1] = 0
+		
+	# Dictionaries.
+	t["night"] = "hey"
 	
-	# Bloc lu à la fin.
-	END
+	# Key presence test.
+	if ("night" in t)
 	{
-		# Tableaux.
-		t[0] = 0
-		
-		# Dico.
-		t["bonsoir"] = "hey"
-		
-		# Test de valeur.
-		if ("bonsoir" in t)
-		{
-			print "Trouvé"
-		}
-		
-		# Boucle.
-		for (cle in t)
-		{...}
-		
-		# Suppression de la clé.
-		delete t[0]
-		
-		# Supprime tout le tableau.
-		delete t
-		
-		# Multidimension.
-		SUBSEP = ":" # préfixe de séparation.
-		
-		i = 1
-		j = 3
-		t[i, j] = "a"
-		
-		# L\'accès est équivalent.
-		print t[i, j], t[i SUBSEP j]
-		
-		# Call de fonction.
-		print carre(2)
+		print "Found key \"night\" in the dictionary, with value \"" t["night"] "\" !"
 	}
-' ...fichiers
+		
+	# Array & dictionary iterator.
+	for (cle in t)
+	{...}
+		
+	# Removes the value at the provided key.
+	delete t[1]
+		
+	# Deletes all the structure.
+	delete t
+		
+	# Multidimension arrays don't exist. They are done by concatenating each key via a separator.
+	SUBSEP = ":" # Field separator for key access.
+		
+	i = 1
+	j = 3
+	t[i, j] = "a"
+		
+	# Accessing t[i, j] is equivalent to concatenating i and j via SUBSEP and accessing the value.
+	print t[i, j], t[i SUBSEP j]
+	
+	# Function call.
+	print square(2)
+}
 ```
 
-> [!WARNING]
-> Attention, indexes de strings à 1.
+```bash
+# Call by file.
+awk -F ";" -f file.awk ...files
 
-- `length(x)` : Longueur d'un string.
-- `substr(x, pos, len)` : Pioche dans x de pos à pos + len. Renvoie le nombre d'éléments placés dans `out`.
-- `tolower(x)`, `toupper(x)` : Gère la capitalisation.
-- `split(x, out, sep)` : Retourne dans `out` le contenu de `x` splitté par `sep`.
+# Alternatively, you can define the entirety of the script in between ''
+awk -F ";" '$0 ~ "hi" {print $1}' ...files
+```
+
+!!! warning "String Indices"
+	String indices start at 1, **not 0** !
+
+- `length(x)` : Length of a string..
+- `substr(x, pos, len)` : Takes from string x, from `pos` to `pos + len`. Returns the extracted string.
+- `tolower(x)`, `toupper(x)` : Capitalization.
+- `split(x, out, sep)` : Splits `x` using separator `sep`. Puts the result in `out` and returns the amount of elements assigned in `out`.
