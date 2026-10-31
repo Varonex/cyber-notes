@@ -1,12 +1,5 @@
 /* Force tous les tableaux à occuper 100% de la largeur de la page. */
-.md-typeset table:not([class])
+.md-typeset__table table, .md-typeset__table td, .md-typeset__table tr
 {
     width: 100%;
-    display: table;
-}
-
-/* Ajuste l'alignement des cellules pour un rendu plus propre. */
-.md-typeset table:not([class]) th, .md-typeset table:not([class]) td
-{
-    padding: 0.6em 1em;
 }
