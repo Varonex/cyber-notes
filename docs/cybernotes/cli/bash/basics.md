@@ -34,8 +34,11 @@
 
 !!! Note "Enumerating in a command"
 	When providing elements in a command, you can easily enumerate ranges via different techniques.
+	
 	`a,b,c` **without spaces** helps to enumerate explicitly.
+	
 	`a-c`; `1-25` helps to explicit ranges.
+
 ## Handling a stream
 
 ### Reading from a stream
