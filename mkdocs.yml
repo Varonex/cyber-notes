@@ -105,8 +105,7 @@ extra:
 # Navigation aisée.
 nav:
     - CyberNotes:
-        - introduction.md
-
+        - index.md
         - CLI:
             - Bash:
                 - Awk: cybernotes/cli/bash/awk.md
