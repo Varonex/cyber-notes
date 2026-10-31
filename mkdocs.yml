@@ -35,6 +35,7 @@ theme:
     features:
         # Navigation avancée.
         - navigation.indexes
+        - navigation.sections
         - navigation.top
         - navigation.tracking
 
@@ -99,13 +100,15 @@ extra:
 # Navigation aisée.
 nav:
     - CyberNotes:
-        - cybernotes.md
+        - introduction.md
+
         - CLI:
             - Bash:
                 - AWK: cybernotes/cli/bash/awk.md
                 - Basics: cybernotes/cli/bash/basics.md
                 - Networking: cybernotes/cli/bash/networking.md
-                - Scripting: cybernotes/cli/bash/scripting.md
+                - Scripting: cybernotes/cli/bash/scripting.md+
+
         - Pentest:
             - Web:
                 - Client:
@@ -113,22 +116,32 @@ nav:
                     - Server:
                         - "Path Traversal": cybernotes/pentest/web/server/path-traversal.md
                         - "SQL Injections (SQLi)": cybernotes/pentest/web/server/sqli.md
+
         - Tools:
-            - "Aircrack-ng": cybernotes/tools/aircrack-ng.md
-            - Amass: cybernotes/tools/amass.md
-            - "Burp Suite": cybernotes/tools/burpsuite.md
-            - FFUF: cybernotes/tools/ffuf.md
-            - GoBuster: cybernotes/tools/gobuster.md
-            - Hashcat: cybernotes/tools/hashcat.md
-            - Impacket: cybernotes/tools/impacket.md
-            - "John The Ripper": cybernotes/tools/john.md
-            - Masscan: cybernotes/tools/masscan.md
-            - Metasploit: cybernotes/tools/metasploit.md
-            - NMap: cybernotes/tools/nmap.md
-            - Nuclei: cybernotes/tools/nuclei.md
-            - SQLMap: cybernotes/tools/sqlmap.md
-            - Subfinder: cybernotes/tools/subfinder.md
-            - Wireshark: cybernotes/tools/wireshark.md
+            - "Credentials & Cracking":
+                - Hashcat: cybernotes/tools/hashcat.md
+                - "John The Ripper": cybernotes/tools/john.md
+            - "Post-Exploitation & AD":
+                - Impacket: cybernotes/tools/impacket.md
+                - Metasploit: cybernotes/tools/metasploit.md
+            - "Recon & Footprinting":
+                - Amass: cybernotes/tools/amass.md
+                - Masscan: cybernotes/tools/masscan.md
+                - NMap: cybernotes/tools/nmap.md
+                - Subfinder: cybernotes/tools/subfinder.md
+            - "Traffic & Analysis":
+                - Wireshark: cybernotes/tools/wireshark.md
+            - "Vulnerability Scanning":
+                - FFUF: cybernotes/tools/ffuf.md
+                - GoBuster: cybernotes/tools/gobuster.md
+                - Nuclei: cybernotes/tools/nuclei.md
+            - "Web Assessment":
+                - "Burp Suite": cybernotes/tools/burpsuite.md
+                - SQLMap: cybernotes/tools/sqlmap.md
+            - "Wireless Security":
+                - "Aircrack-ng": cybernotes/tools/aircrack-ng.md
+
+        - "Useful websites": cybernotes/online_tools/useful-websites.md
 
         - Writeups:
             - "Over The Wire":
