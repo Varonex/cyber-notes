@@ -13,7 +13,7 @@ function square(x)
 	return x*x
 }
 
-# Code ran at the very beginning (before file parsing).
+# Code run at the very beginning (before file parsing).
 BEGIN
 {
 	# We cannot access file-related environment variables here yet.
@@ -27,7 +27,7 @@ BEGIN
 	
 # The following code is executed for each row.
 {
-	# $0 = all the line.
+	# $0 = the entire line.
 	print $0
 		
 	# Displays $0 (if nothing is provided).
@@ -143,13 +143,13 @@ END
 awk -F ";" -f file.awk ...files
 
 # Alternatively, you can define the entirety of the script in between ''
-awk -F ";" '$0 ~ "hi" {print $1}' ...files
+awk -F ";" '$2 ~ "hi" {print $1}' ...files
 ```
 
 !!! warning "String Indices"
 	String indices start at 1, **not 0** !
 
 - `length(x)` : Length of a string..
-- `substr(x, pos, len)` : Takes from string x, from `pos` to `pos + len`. Returns the extracted string.
+- `substr(x, pos, len)` : Extracts a subtring from string x, starting at `pos` for up to `len` characters. Returns the substring.
 - `tolower(x)`, `toupper(x)` : Capitalization.
 - `split(x, out, sep)` : Splits `x` using separator `sep`. Puts the result in `out` and returns the amount of elements assigned in `out`.

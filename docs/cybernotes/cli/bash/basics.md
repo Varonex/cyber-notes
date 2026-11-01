@@ -37,7 +37,7 @@
 	
 	`a,b,c` **without spaces** helps to enumerate explicitly.
 	
-	`a-c`; `1-25` helps to explicit ranges.
+	`a-c`; `1-25` helps to specify ranges.
 
 ## Handling a stream
 

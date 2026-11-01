@@ -63,6 +63,7 @@ markdown_extensions:
     # Interprétations et parsing.
     - admonition
     - pymdownx.details
+    - pymdownx.magiclink
 
     - pymdownx.highlight:
         anchor_linenums: true
@@ -123,30 +124,30 @@ nav:
 
         - Tools:
             - "Credentials & Cracking":
-                - Hashcat: cybernotes/tools/credentials_and_cracking/hashcat.md
-                - "John The Ripper": cybernotes/tools/credentials_and_cracking/john.md
+                - Hashcat: cybernotes/tools/credentials-and-cracking/hashcat.md
+                - "John The Ripper": cybernotes/tools/credentials-and-cracking/john.md
             - "Post-Exploitation & AD":
-                - Impacket: cybernotes/tools/postexploitation_and_ad/impacket.md
-                - Metasploit: cybernotes/tools/postexploitation_and_ad/metasploit.md
+                - Impacket: cybernotes/tools/postexploitation-and-ad/impacket.md
+                - Metasploit: cybernotes/tools/postexploitation-and-ad/metasploit.md
             - "Recon & Footprinting":
-                - Amass: cybernotes/tools/recon_and_footprinting/amass.md
-                - Masscan: cybernotes/tools/recon_and_footprinting/masscan.md
-                - NMap: cybernotes/tools/recon_and_footprinting/nmap.md
-                - Subfinder: cybernotes/tools/recon_and_footprinting/subfinder.md
+                - Amass: cybernotes/tools/recon-and-footprinting/amass.md
+                - Masscan: cybernotes/tools/recon-and-footprinting/masscan.md
+                - NMap: cybernotes/tools/recon-and-footprinting/nmap.md
+                - Subfinder: cybernotes/tools/recon-and-footprinting/subfinder.md
             - "Traffic & Analysis":
-                - Wireshark: cybernotes/tools/traffic_and_analysis/wireshark.md
+                - Wireshark: cybernotes/tools/traffic-and-analysis/wireshark.md
             - "Vulnerability Scanning":
-                - FFUF: cybernotes/tools/vulnerability_scanning/ffuf.md
-                - GoBuster: cybernotes/tools/vulnerability_scanning/gobuster.md
-                - Nuclei: cybernotes/tools/vulnerability_scanning/nuclei.md
+                - FFUF: cybernotes/tools/vulnerability-scanning/ffuf.md
+                - GoBuster: cybernotes/tools/vulnerability-scanning/gobuster.md
+                - Nuclei: cybernotes/tools/vulnerability-scanning/nuclei.md
             - "Web Assessment":
-                - "Burp Suite": cybernotes/tools/web_assessment/burpsuite.md
-                - SQLMap: cybernotes/tools/web_assessment/sqlmap.md
+                - "Burp Suite": cybernotes/tools/web-assessment/burpsuite.md
+                - SQLMap: cybernotes/tools/web-assessment/sqlmap.md
             - "Wireless Security":
-                - "Aircrack-ng": cybernotes/tools/wireless_security/aircrack-ng.md
+                - "Aircrack-ng": cybernotes/tools/wireless-security/aircrack-ng.md
 
-        - "Useful websites": cybernotes/online_tools/useful-websites.md
+        - "Useful websites": cybernotes/online-tools/useful-websites.md
 
         - Writeups:
             - "Over The Wire":
-                - Bandit: cybernotes/writeups/over_the_wire/bandit.md
+                - Bandit: cybernotes/writeups/over-the-wire/bandit.md
