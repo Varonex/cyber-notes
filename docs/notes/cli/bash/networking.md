@@ -55,7 +55,7 @@
 | Command           | Description                                                                                                                                                             | Notable options |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | `scp [u]`         | Protocole SCP basé sur SSH<br>pour le transfert de fichiers<br>orienté CLI (utile pour les<br>scripts).<br>SCP protocol based on SSH to quickly transfer files via CLI. |                 |
-| `sftp [u]`        | SFTP protocol based on FTP and layered over SSH to interactively do file transfer operations. Handy for GUI-based apps.                                                 |                 |
+| `sftp [u]`        | SFTP protocol that uses SSH. Based on the same idea of FTP but it is not the same underlaying protocl at all.                                                           |                 |
 | `ssh [u]`         | SSH protocol that inherits from TELNET, allowing remote shell connections.                                                                                              |                 |
 | `ssh-add`         |                                                                                                                                                                         |                 |
 | `ssh-agent`       |                                                                                                                                                                         |                 |
