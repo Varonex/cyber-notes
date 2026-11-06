@@ -1,5 +1,5 @@
-## Cyber Security Vulnerabilities
+## CyberNotes
 
-Ce répo liste toutes les vulnérabilités que j'ai pu trouver tout au long de mon parcours.
+This repository brings a non-exhaustive list of the discoveries I have found during my cybersecurity career.
 
-Wiki disponible [ici](https://varonex.github.io/cyber-notes)
+Wiki [here](https://varonex.github.io/cyber-notes)
