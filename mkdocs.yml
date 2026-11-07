@@ -56,9 +56,9 @@ theme:
 plugins:
     - search
     - git-revision-date-localized:
-        - enable_creation_date: true
-        - type: timeago
-        - fallback_to_build_date: true
+        enable_creation_date: true
+        type: timeago
+        fallback_to_build_date: true
 
 # Markdown additionnel.
 markdown_extensions:
