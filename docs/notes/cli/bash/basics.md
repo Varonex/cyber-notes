@@ -34,6 +34,7 @@
 
 !!! note "Enumerating in a command"
 	When providing elements in a command, you can easily enumerate ranges via different techniques.
+	
 	- `a,b,c` **without spaces** helps to enumerate explicitly.
 	- `a-c`; `1-25` helps to specify ranges.
 
@@ -74,10 +75,10 @@
 - `~` : Home directory (of the current user).
 
 !!! note "Concept of wildcard"
-	In bash, you can use the `*` symbol as a wildcard to dynamically fetch a list of files.
-	The `?` symbol allows you to expand to a single character.
-	The `{a,b}` syntax replaces by "a" or "b".
-	Eventually, you can also consider doing directory recursions via `**`.
+	- You can use the `*` symbol as a wildcard to dynamically fetch a list of files.
+	- The `?` symbol allows you to expand to a single character.
+	- The `{a,b}` syntax replaces by "a" or "b".
+	- Eventually, you can also consider doing directory recursions via `**`.
 
 | Command              | Description                                                                                  | Notable options                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | -------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
