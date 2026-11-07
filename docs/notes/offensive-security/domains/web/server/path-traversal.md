@@ -76,7 +76,7 @@ We can manipulate the filepath to go through the filesystem :
 
 ### Doubling characters
 
-> **Goal** : Evade symbol deletion of `../` from the string.
+> **Goal** : Evade symbol deletion of `..` from the string.
 
 ```html
 <img src="/images?path=dog.png"/>

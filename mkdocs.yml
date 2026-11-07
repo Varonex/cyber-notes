@@ -117,49 +117,49 @@ extra:
 
 # Navigation aisée.
 nav:
-    - CyberNotes:
-        - index.md
-        - CLI:
-            - Bash:
-                - Awk: notes/cli/bash/awk.md
-                - Basics: notes/cli/bash/basics.md
-                - Networking: notes/cli/bash/networking.md
-                - Scripting: notes/cli/bash/scripting.md
+    - "Cyber Notes": index.md
+    - CLI:
+        - Bash:
+            - Awk: notes/cli/bash/awk.md
+            - Basics: notes/cli/bash/basics.md
+            - Networking: notes/cli/bash/networking.md
+            - Scripting: notes/cli/bash/scripting.md
 
-        - Pentest:
+    - "Offensive Security":
+        - Domains:
             - Web:
                 - Client:
-                    - "Cross Site Scripting (XSS)": notes/pentest/web/client/xss.md
+                    - "Cross Site Scripting (XSS)": notes/offensive-security/domains/web/client/xss.md
                 - Server:
-                    - "Path Traversal": notes/pentest/web/server/path-traversal.md
-                    - "SQL Injections (SQLi)": notes/pentest/web/server/sqli.md
+                    - "Path Traversal": notes/offensive-security/domains/web/server/path-traversal.md
+                    - "SQL Injections (SQLi)": notes/offensive-security/domains/web/server/sqli.md
 
-        - Tools:
+        - Tooling:
             - "Credentials & Cracking":
-                - Hashcat: notes/tools/credentials-and-cracking/hashcat.md
-                - "John The Ripper": notes/tools/credentials-and-cracking/john.md
+                - Hashcat: notes/offensive-security/tooling/credentials-and-cracking/hashcat.md
+                - "John The Ripper": notes/offensive-security/tooling/credentials-and-cracking/john.md
             - "Post-Exploitation & AD":
-                - Impacket: notes/tools/postexploitation-and-ad/impacket.md
-                - Metasploit: notes/tools/postexploitation-and-ad/metasploit.md
+                - Impacket: notes/offensive-security/tooling/postexploitation-and-ad/impacket.md
+                - Metasploit: notes/offensive-security/tooling/postexploitation-and-ad/metasploit.md
             - "Recon & Footprinting":
-                - Amass: notes/tools/recon-and-footprinting/amass.md
-                - Masscan: notes/tools/recon-and-footprinting/masscan.md
-                - NMap: notes/tools/recon-and-footprinting/nmap.md
-                - Subfinder: notes/tools/recon-and-footprinting/subfinder.md
+                - Amass: notes/offensive-security/tooling/recon-and-footprinting/amass.md
+                - Masscan: notes/offensive-security/tooling/recon-and-footprinting/masscan.md
+                - NMap: notes/offensive-security/tooling/recon-and-footprinting/nmap.md
+                - Subfinder: notes/offensive-security/tooling/recon-and-footprinting/subfinder.md
             - "Traffic & Analysis":
-                - Wireshark: notes/tools/traffic-and-analysis/wireshark.md
+                - Wireshark: notes/offensive-security/tooling/traffic-and-analysis/wireshark.md
             - "Vulnerability Scanning":
-                - FFUF: notes/tools/vulnerability-scanning/ffuf.md
-                - GoBuster: notes/tools/vulnerability-scanning/gobuster.md
-                - Nuclei: notes/tools/vulnerability-scanning/nuclei.md
+                - FFUF: notes/offensive-security/tooling/vulnerability-scanning/ffuf.md
+                - GoBuster: notes/offensive-security/tooling/vulnerability-scanning/gobuster.md
+                - Nuclei: notes/offensive-security/tooling/vulnerability-scanning/nuclei.md
             - "Web Assessment":
-                - "Burp Suite": notes/tools/web-assessment/burpsuite.md
-                - SQLMap: notes/tools/web-assessment/sqlmap.md
+                - "Burp Suite": notes/offensive-security/tooling/web-assessment/burpsuite.md
+                - SQLMap: notes/offensive-security/tooling/web-assessment/sqlmap.md
             - "Wireless Security":
-                - "Aircrack-ng": notes/tools/wireless-security/aircrack-ng.md
+                - "Aircrack-ng": notes/offensive-security/tooling/wireless-security/aircrack-ng.md
 
-        - "Useful websites": notes/online-tools/useful-websites.md
+    - "Useful websites": notes/useful-websites.md
 
-        - Writeups:
-            - "Over The Wire":
-                - Bandit: notes/writeups/over-the-wire/bandit.md
+    - Writeups:
+        - "Over The Wire":
+            - Bandit: notes/writeups/over-the-wire/bandit.md
