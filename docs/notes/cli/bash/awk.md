@@ -149,7 +149,8 @@ awk -F ";" '$2 ~ "hi" {print $1}' ...files
 !!! warning "String Indices"
 	String indices start at 1, **not 0** !
 
-- `length(x)` : Length of a string..
-- `substr(x, pos, len)` : Extracts a subtring from string x, starting at `pos` for up to `len` characters. Returns the substring.
-- `tolower(x)`, `toupper(x)` : Capitalization.
-- `split(x, out, sep)` : Splits `x` using separator `sep`. Puts the result in `out` and returns the amount of elements assigned in `out`.
+!!! tip "Useful methods"
+	- `length(x)` : Length of a string..
+	- `substr(x, pos, len)` : Extracts a subtring from string x, starting at `pos` for up to `len` characters. Returns the substring.
+	- `tolower(x)`, `toupper(x)` : Capitalization.
+	- `split(x, out, sep)` : Splits `x` using separator `sep`. Puts the result in `out` and returns the amount of elements assigned in `out`.

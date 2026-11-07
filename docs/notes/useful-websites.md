@@ -12,22 +12,23 @@
 	- ❌: Not a great experience.
 	- ➖: Mid experience. Can be a great tool in some situation.
 	- ✅: Great tool. Results tend to be accurate and exhaustive.
+	- ❔: Unknown.
 ## Anonymity
 
 | Website name                                   | Description                                                                                         | Access | Rating |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------ | ------ |
-| [SimpleLogin](https://simplelogin.io)          | Email forwarder. Acts like a proxy email address.                                                   | 🟢     |        |
-| [GuerrillaMail](https://www.guerrillamail.com) | Temporary email address that allows to send mails.                                                  | 🟢     |        |
-| [TempMail](https://temp-mail.org/fr)           | Readonly temporary email address.                                                                   | 🟢     |        |
-| [Tor Project](https://temp-mail.org/fr)        | Web browser well known to have great anonymity, especially when it comes to accessing the dark net. | 🟢     |        |
-| [PrivacyTools](https://privacytools.io)        | Catalog of best tools to find alternatives of everyday tools to protect our own private life.       | 🟢     |        |
+| [SimpleLogin](https://simplelogin.io)          | Email forwarder. Acts like a proxy email address.                                                   | 🟢     | ✅      |
+| [GuerrillaMail](https://www.guerrillamail.com) | Temporary email address that allows to send mails.                                                  | 🟢     | ✅      |
+| [TempMail](https://temp-mail.org/fr)           | Readonly temporary email address.                                                                   | 🟢     | ✅      |
+| [Tor Project](https://temp-mail.org/fr)        | Web browser well known to have great anonymity, especially when it comes to accessing the dark net. | 🟢     | ✅      |
+| [PrivacyTools](https://privacytools.io)        | Catalog of best tools to find alternatives of everyday tools to protect our own private life.       | 🟢     | ✅      |
 
 ## Exploits
 
 | Website name                                    | Description                                        | Access | Rating |
 | ----------------------------------------------- | -------------------------------------------------- | ------ | ------ |
-| [Exploit DB](https://www.exploit-db.com)        | Well-known exploits list.                          | 🟢     |        |
-| [Trickest/CVE](https://github.com/trickest/cve) | Github repository listing PoC for well-known CVEs. | 🟢     |        |
+| [Exploit DB](https://www.exploit-db.com)        | Well-known exploits list.                          | 🟢     | ✅      |
+| [Trickest/CVE](https://github.com/trickest/cve) | Github repository listing PoC for well-known CVEs. | 🟢     | ✅      |
 
 ## Leaks
 
@@ -35,8 +36,8 @@
 
 | Website name                     | Description                | Access | Rating |
 | -------------------------------- | -------------------------- | ------ | ------ |
-| [DeHashed](https://dehashed.com) | Dehashed content database. |        |        |
-| [Snusbase](https://snusbase.com) | Dehashed content database. |        |        |
+| [DeHashed](https://dehashed.com) | Dehashed content database. |        | ❔      |
+| [Snusbase](https://snusbase.com) | Dehashed content database. |        | ❔      |
 
 ### Leak check
 
@@ -57,7 +58,7 @@ Technical OSINT consists in passively finding information about anything related
 
 | Website name                                                       | Description                                                                              | Access | Rating |
 | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- | ------ | ------ |
-| [Archive](https://web.archive.org)                                 | Web archive. If the desired page was archived, then the content will be available there. | 🟢     |        |
+| [Archive](https://web.archive.org)                                 | Web archive. If the desired page was archived, then the content will be available there. | 🟢     | ➖      |
 | [BuiltWith](https://builtwith.com)                                 | Gives out the frameworks that were used to create a website.                             |        |        |
 | [Censys](https://platform.censys.io/home)                          | Recherche d'endpoints via des filtres.                                                   |        |        |
 | [CriminalIP](https://search.criminalip.io)                         | Recherche d'endpoints via des filtres.                                                   |        |        |
@@ -82,17 +83,17 @@ Identity OSINT is the art of crossing pieces of information together to track an
 
 | Website name                                 | Description                                                                       | Access | Rating |
 | -------------------------------------------- | --------------------------------------------------------------------------------- | ------ | ------ |
-| [Epios](https://epios.com)                   | Email and phone OSINT platform.                                                   |        |        |
+| [Epios](https://epios.com)                   | Email and phone OSINT platform.                                                   |        | ✅      |
 | [Facecheck](https://facecheck.id)            | Face recognition done on social medias.                                           |        |        |
 | [Hunter](https://hunter.io)                  | Finds email formats issued by a company.                                          |        |        |
 | [Lampyre](https://lampyre.io)                | Centralizes and links accounts together.                                          |        |        |
 | [Maltego](https://www.maltego.com)           | Centralizes and links accounts together.                                          |        |        |
-| [Namechk](https://namechk.com)               | Verifies the availability of a username on different platforms.                   |        |        |
-| [OSINT.industries](https://osint.industries) | Global identity OSINT platform.                                                   |        |        |
-| [OSINT.ly](https://osint.ly)                 | Global identity OSINT platform.                                                   |        |        |
-| [Phonebook](https://phonebook.cz)            | Despite the name, email addresses linked to a domain. Requires an intelx account. |        |        |
-| [Social Searcher](https://phonebook.cz)      | Basic page finder based on username.                                              |        |        |
-| [SpiderFoot](https://spiderfoot.tools)       | Username, email and IP address search engine.                                     |        |        |
+| [Namechk](https://namechk.com)               | Verifies the availability of a username on different platforms.                   | 🟢     | ✅      |
+| [OSINT.industries](https://osint.industries) | Global identity OSINT platform.                                                   | 🔴     | ❔      |
+| [OSINT.ly](https://osint.ly)                 | Global identity OSINT platform.                                                   | 🟠     | ✅      |
+| [Phonebook](https://phonebook.cz)            | Despite the name, email addresses linked to a domain. Requires an intelx account. | 🟠     | ❔      |
+| [Social Searcher](https://phonebook.cz)      | Basic page finder based on username.                                              | 🟢     | ❌      |
+| [SpiderFoot](https://spiderfoot.tools)       | Username, email and IP address search engine.                                     | 🟢     | ✅      |
 | [Sync.me](https://sync.me)                   | Phone reverse search.                                                             |        |        |
 | [TinEye](https://tineye.com)                 | Inverse image search specialized in finding the base image of photoshopped ones.  |        |        |
 | [WhatsMyName](https://whatsmyname.app)       | Recherche par username.                                                           |        |        |
@@ -104,9 +105,9 @@ Identity OSINT is the art of crossing pieces of information together to track an
 | -------------------------------------------------------------------- | ---------------------------------------------------- | ------ | ------ |
 | [AlientVault](https://otx.alienvault.com)                            | CTI platform.                                        |        |        |
 | [CISA](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | US vulnerabilities catalog.                          |        |        |
-| [CVE](https://www.cve.org)                                           | Official CVE records.                                |        |        |
-| [HybridAnalysis](https://hybrid-analysis.com)                        | File and URL malware scans.                          |        |        |
-| [NVD](https://nvd.nist.gov/vuln)                                     | NIST CVE records with CVSS scoring.                  |        |        |
-| [SSL-Labs](https://www.ssllabs.com/ssltest/)                         | SSL vulnerabilities belonging to a domain.           |        |        |
-| [URLScan](https://urlscan.io)                                        | URL scanning to estimate a website's security level. |        |        |
-| [VirusTotal](https://urlscan.io)                                     | File malware scan.                                   |        |        |
+| [CVE](https://www.cve.org)                                           | Official CVE records.                                | 🟢     | ✅      |
+| [HybridAnalysis](https://hybrid-analysis.com)                        | File and URL malware scans.                          | 🟢     | ✅      |
+| [NVD](https://nvd.nist.gov/vuln)                                     | NIST CVE records with CVSS scoring.                  | 🟢     | ✅      |
+| [SSL-Labs](https://www.ssllabs.com/ssltest/)                         | SSL vulnerabilities belonging to a domain.           | 🟢     | ✅      |
+| [URLScan](https://urlscan.io)                                        | URL scanning to estimate a website's security level. | 🟢     | ✅      |
+| [VirusTotal](https://urlscan.io)                                     | File malware scan.                                   | 🟢     | ✅      |

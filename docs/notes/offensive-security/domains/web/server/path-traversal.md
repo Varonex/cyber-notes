@@ -24,9 +24,8 @@ We can manipulate the filepath to go through the filesystem :
 ```
 
 !!! note "File path separator"
-	`/` for unix/bsd/mac.
-
-	`\` and `/` for Windows.
+	- `/` for unix/bsd/mac.
+	- `\` and `/` for Windows.
 
 !!! tip "Combine techniques"
 	All the techniques displayed here can be easily combined for more efficiency.
