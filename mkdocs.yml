@@ -10,7 +10,6 @@ repo_url: https://github.com/Varonex/cyber-notes
 theme:
     name: material
     language: en
-    copyright: "CyberNotes &copy; 2026 by Varonex is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/"
 
   # Couleurs.
     palette:
@@ -99,9 +98,19 @@ extra_css:
 extra_javascript:
     - js/app.js
 
-# Enlève les marques du générateur.
+# Copyright
+copyright: "CyberNotes &copy; 2026 by Varonex is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/"
+
+# Extra
 extra:
+    # Enlève les marques du générateur.
     generator: false
+
+    # Réseaux
+    scoial:
+        - icon: fontawesome/brands/github
+          link: https://varonex.github.io
+          name: Varonex's Pages
 
 # Navigation aisée.
 nav:
