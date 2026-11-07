@@ -108,9 +108,12 @@ extra:
 
     # Réseaux
     social:
-        - icon: fontawesome/brands/github
+        - icon: fontawesome/solid/hubspot
           link: https://varonex.github.io
           name: Varonex's Pages
+        - icon: fontawesome/brands/github
+          link: https://github.com/Varonex
+          name: Github
 
 # Navigation aisée.
 nav:
