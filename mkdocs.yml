@@ -99,7 +99,7 @@ extra_javascript:
     - js/app.js
 
 # Copyright
-copyright: "CyberNotes &copy; 2026 by Varonex is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/"
+copyright: "CyberNotes &copy; 2026 by Varonex is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">CreativeCommons</a>"
 
 # Extra
 extra:
