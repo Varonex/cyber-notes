@@ -53,12 +53,12 @@ theme:
         - search.share
 
 # Plugins.
-plugins:
-    - search
-    - git-revision-date-localized:
-        enable_creation_date: true
-        type: timeago
-        fallback_to_build_date: true
+#plugins:
+#    - search
+#    - git-revision-date-localized:
+#        enable_creation_date: true
+#        type: timeago
+#        fallback_to_build_date: true
 
 # Markdown additionnel.
 markdown_extensions:

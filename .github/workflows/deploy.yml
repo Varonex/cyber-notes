@@ -20,8 +20,8 @@ jobs:
             # Récupère dans le runner virtuel.
             - name: Checkout repo
               uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0 # Permet de récupérer l'historique.
+#              with:
+#                  fetch-depth: 0 # Permet de récupérer l'historique.
 
             # Configure python 3x.
             - name: Configure python
