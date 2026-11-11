@@ -51,14 +51,3 @@
 {
     border-right: none;
 }
-
-/* Texte vertical. */
-.packet-frame td:not([colspan]):not([colspan="1"]), .packet-frame td.v-text {
-    writing-mode: vertical-rl;
-    text-align: center;
-    font-size: 0.68rem;
-    font-weight: bold;
-    padding: 6px 0;
-    height: 50px;
-    vertical-align: middle;
-}
