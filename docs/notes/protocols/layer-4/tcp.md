@@ -1,1 +1,45 @@
 # TCP
+
+<table class="packet-frame">
+    <tr>
+        <td colspan="8">0 - 7</td>
+        <td colspan="8">8 - 15</td>
+        <td colspan="8">16 - 23</td>
+        <td colspan="8">24 - 31</td>
+    </tr>
+    <tr>
+        <td colspan="16">Source Port</td>
+        <td colspan="16">Destination Port</td>
+    </tr>
+    <tr>
+        <td colspan="32">Sequence Number</td>
+    </tr>
+    <tr>
+        <td colspan="32">Acknowledgment Number</td>
+    </tr>
+    <tr>
+        <td colspan="4">Header Size</td>
+        <td colspan="3">Reserved</td>
+        <td>N</td>
+        <td>C</td>
+        <td>E</td>
+        <td>U</td>
+        <td>A</td>
+        <td>P</td>
+        <td>R</td>
+        <td>S</td>
+        <td>F</td>
+        <td colspan="16">Window</td>
+    </tr>
+    <tr>
+        <td colspan="16">Checksum</td>
+        <td colspan="16">Urgent Pointer</td>
+    </tr>
+    <tr>
+        <td colspan="22">TCP Options</td>
+        <td colspan="10">Padding</td>
+    </tr>
+    <tr>
+        <td colspan="32">Data</td>
+    </tr>
+</table>
