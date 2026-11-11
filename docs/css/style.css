@@ -9,13 +9,14 @@
 .packet-frame
 {
     width: 100%;
+    table-layout: fixed;
     border-collapse: separate;
     border-spacing: 0;
     margin: 1.5rem 0;
     font-family: monospace;
     font-size: 0.85rem;
     text-align: center;
-    border: 1px solid #30363d; /* Bordure extérieure globale */
+    border: 1px solid #30363d;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -32,9 +33,12 @@
 /* Chaque ligne. */
 .packet-frame td
 {
-    border-right: 1px solid #30363d;  /* Bordures intérieures verticales */
-    border-bottom: 1px solid #30363d; /* Bordures intérieures horizontales */
-    padding: 10px 6px;
+    border-right: 1px solid #30363d;
+    border-bottom: 1px solid #30363d;
+    padding: 8px 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /* Dernière ligne & colonne. */
@@ -46,4 +50,15 @@
 .packet-frame td:last-child
 {
     border-right: none;
+}
+
+/* Texte vertical. */
+.packet-frame td:not([colspan]), .packet-frame td.v-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg); /* Orientation de bas en haut */
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 6px 0;
+    height: 50px; /* Force la hauteur nécessaire au texte vertical */
+    vertical-align: middle;
 }

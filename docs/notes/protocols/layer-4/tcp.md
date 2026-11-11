@@ -1,6 +1,9 @@
 # TCP
 
 <table class="packet-frame">
+    <colgroup>
+        <col span="32" style="width: 3.125%;"/>
+    </colgroup>
     <tr>
         <td colspan="8">0 - 7</td>
         <td colspan="8">8 - 15</td>
