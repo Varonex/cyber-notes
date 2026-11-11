@@ -15,24 +15,26 @@
     font-family: monospace;
     font-size: 0.85rem;
     text-align: center;
-    border: 1px solid;
+    border: 1px solid #30363d; /* Bordure extérieure globale */
     border-radius: 6px;
     overflow: hidden;
 }
 
-/* Ligne d'en-tête des numéros de bits */
+/* Ligne d'en-tête (numéros de bits : 0 - 7, 8 - 15...) */
 .packet-frame tr:first-child td
 {
     font-size: 0.75rem;
     font-weight: bold;
+    opacity: 0.75;
+    background-color: rgba(255, 255, 255, 0.03); /* Léger fond pour l'en-tête */
 }
 
 /* Chaque ligne. */
 .packet-frame td
 {
-    border-right: 1px;
-    border-bottom: 1px;
-    padding: 8px 4px;
+    border-right: 1px solid #30363d;  /* Bordures intérieures verticales */
+    border-bottom: 1px solid #30363d; /* Bordures intérieures horizontales */
+    padding: 10px 6px;
 }
 
 /* Dernière ligne & colonne. */
