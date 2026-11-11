@@ -37,6 +37,10 @@
 	
 	- `a,b,c` **without spaces** helps to enumerate explicitly.
 	- `a-c`; `1-25` helps to specify ranges.
+	- `{0..5}` is the same as `0-5`.
+	- `{0..5..2}` would be from 0 to 5 with a step of 2.
+	- `{a..z..2}` would be from a to z with a step of 2.
+	- `{05..00..-1}` would be from 5 to 0, with an extra padding.
 
 ## Handling a stream
 

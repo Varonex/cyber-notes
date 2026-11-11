@@ -131,6 +131,7 @@ nav:
             - Awk: notes/cli/bash/awk.md
             - Basics: notes/cli/bash/basics.md
             - Networking: notes/cli/bash/networking.md
+            - Process: notes/cli/bash/process.md
             - Scripting: notes/cli/bash/scripting.md
 
     - "Offensive Security":

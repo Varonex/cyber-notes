@@ -1,4 +1,4 @@
-# Bash network basics
+# Bash networking basics
 
 ## MAC & IP
 
