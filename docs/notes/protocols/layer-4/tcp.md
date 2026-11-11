@@ -22,8 +22,7 @@
     </tr>
     <tr>
         <td colspan="4">Header Size</td>
-        <td colspan="3">Reserved</td>
-        <td>N</td>
+        <td colspan="4">Reserved</td>
         <td>C</td>
         <td>E</td>
         <td>U</td>
