@@ -55,10 +55,9 @@
 /* Texte vertical. */
 .packet-frame td:not([colspan]), .packet-frame td.v-text {
     writing-mode: vertical-rl;
-    transform: rotate(180deg); /* Orientation de bas en haut */
     font-size: 0.7rem;
     font-weight: bold;
     padding: 6px 0;
-    height: 50px; /* Force la hauteur nécessaire au texte vertical */
+    height: 50px;
     vertical-align: middle;
 }
