@@ -4,3 +4,44 @@
     width: 100%;
     display: table;
 }
+
+/* Style pour les schémas de trames réseau */
+.packet-frame
+{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Ligne d'en-tête des numéros de bits */
+.packet-frame tr:first-child td
+{
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Chaque ligne. */
+.packet-frame td
+{
+    border-right: 1px;
+    border-bottom: 1px;
+    padding: 8px 4px;
+}
+
+/* Dernière ligne & colonne. */
+.packet-frame tr:last-child td
+{
+    border-bottom: none;
+}
+
+.packet-frame td:last-child
+{
+    border-right: none;
+}
