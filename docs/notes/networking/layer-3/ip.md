@@ -125,7 +125,6 @@ An address comes with a mask : `W'.X'.Y'.Z'`. The mask separates the Net ID from
 ### Attack types
 
 - **IP spoofing** : forging the source IP address to impersonate a trusted host or trigger reflection/amplification attacks.
-- 
 - Fragmentation attacks
 	- **Overfragmentation** : fragment packets a lot to evade IDS and other stateless security devices.
 	- **Fragment overlap** : manipulate the `Fragment Offset` values so fragments overwrite each other, exploiting differences in, how the IDS and the target OS reassemble the payload.
