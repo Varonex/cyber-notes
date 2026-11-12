@@ -8,7 +8,7 @@
         <col span="32" style="width: 3%;"/>
     </colgroup>
     <tr>
-        <td>Octets</td>
+        <td></td>
         <td colspan="8">0 - 7</td>
         <td colspan="8">8 - 15</td>
         <td colspan="8">16 - 23</td>
@@ -49,7 +49,7 @@
         <td colspan="8">Padding (4B alignment)</td>
     </tr>
     <tr>
-        <td>24</td>
+        <td>20-60</td>
         <td colspan="32">Data</td>
     </tr>
 </table>
@@ -58,37 +58,44 @@
 
 <table class="packet-frame">
     <colgroup>
-        <col span="32" style="width: 3.125%;"/>
+        <col style="width: 40px;"/>
+        <col span="32" style="width: 3%;"/>
     </colgroup>
     <tr>
+        <td></td>
         <td colspan="8">0 - 7</td>
         <td colspan="8">8 - 15</td>
         <td colspan="8">16 - 23</td>
         <td colspan="8">24 - 31</td>
     </tr>
     <tr>
+        <td>0</td>
         <td colspan="4">Version</td>
         <td colspan="8">Traffic Class</td>
         <td colspan="20">Flow Label</td>
     </tr>
     <tr>
+        <td>4</td>
         <td colspan="16">Payload Length</td>
         <td colspan="8">Next Header</td>
         <td colspan="8">Hop Limit</td>
     </tr>
     <tr>
+        <td>8</td>
         <td colspan="32" rowspan="4">Source Address</td>
     </tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
+    <tr><td>12</td></tr>
+    <tr><td>16</td></tr>
+    <tr><td>20</td></tr>
     <tr>
+        <td>24</td>
         <td colspan="32" rowspan="4">Destination Address</td>
     </tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
+    <tr><td>28</td></tr>
+    <tr><td>32</td></tr>
+    <tr><td>36</td></tr>
     <tr>
+        <td>40</td>
         <td colspan="32">Data</td>
     </tr>
 </table>
