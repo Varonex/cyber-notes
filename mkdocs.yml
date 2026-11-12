@@ -170,7 +170,7 @@ nav:
         - "1. Recon & Footprinting":
             - Amass: notes/tooling/1-recon-and-footprinting/amass.md
             - Masscan: notes/tooling/1-recon-and-footprinting/masscan.md
-            - NMap: notes/tooling/1-recon-and-footprinting/nmap.md
+            - Nmap: notes/tooling/1-recon-and-footprinting/nmap.md
             - Subfinder: notes/tooling/1-recon-and-footprinting/subfinder.md
         - "2. Vulnerability Scanning":
             - FFUF: notes/tooling/2-vulnerability-scanning/ffuf.md
