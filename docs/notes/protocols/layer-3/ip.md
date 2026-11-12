@@ -3,7 +3,7 @@
 ## IPv4
 
 <div class="packet-frame-wrapper">
-    <table>
+    <table class="packet-frame">
         <colgroup>
             <col style="width: 40px;"/>
             <col span="32" style="width: 3%;"/>

@@ -20,6 +20,7 @@
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse; /* Les bordures intérieures fusionnent nativement */
+    border-style: hidden;
     font-family: monospace;
     font-size: 0.85rem;
     text-align: center;
