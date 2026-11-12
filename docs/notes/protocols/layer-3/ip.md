@@ -46,3 +46,36 @@
 </table>
 
 ## IPv6
+
+<table class="packet-frame">
+    <colgroup>
+        <col span="32" style="width: 3.125%;"/>
+    </colgroup>
+    <tr>
+        <td colspan="8">0 - 7</td>
+        <td colspan="8">8 - 15</td>
+        <td colspan="8">16 - 23</td>
+        <td colspan="8">24 - 31</td>
+    </tr>
+    <tr>
+        <td colspan="4">Version</td>
+        <td colspan="8">Traffic Class</td>
+        <td colspan="20">Flow Label</td>
+    </tr>
+    <tr>
+        <td colspan="16">Payload Length</td>
+        <td colspan="8">Next Header</td>
+        <td colspan="8">Hop Limit</td>
+    </tr>
+    <tr>
+        <td colspan="32" rowspan="2">Source Address</td>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td colspan="32" rowspan="2">Destination Address</td>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td colspan="32">Data</td>
+    </tr>
+</table>
