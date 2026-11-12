@@ -68,13 +68,17 @@
         <td colspan="8">Hop Limit</td>
     </tr>
     <tr>
-        <td colspan="32" rowspan="2">Source Address</td>
+        <td colspan="32" rowspan="4">Source Address</td>
     </tr>
-    <tr><td colspan="32"></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
     <tr>
-        <td colspan="32" rowspan="2">Destination Address</td>
+        <td colspan="32" rowspan="4">Destination Address</td>
     </tr>
-    <tr><td colspan="32"></td></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
     <tr>
         <td colspan="32">Data</td>
     </tr>
