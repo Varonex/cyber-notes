@@ -3,6 +3,9 @@
 ## IPv4
 
 <table class="packet-frame">
+    <colgroup>
+        <col span="32" style="width: 3.125%;"/>
+    </colgroup>
     <tr>
         <td colspan="8">0 - 7</td>
         <td colspan="8">8 - 15</td>
@@ -10,9 +13,27 @@
         <td colspan="8">24 - 31</td>
     </tr>
     <tr>
-        <td colspan="8">Val1</td>
-        <td colspan="8">Val2</td>
-        <td colspan="16">Val3</td>
+        <td colspan="4">Version</td>
+        <td colspan="4">IHL</td>
+        <td colspan="8">Type of Service</td>
+        <td colspan="16">Total Length</td>
+    </tr>
+    <tr>
+        <td colspan="16">Identification</td>
+        <td colspan="2">Flags</td>
+        <td colspan="14">Fragment Offset</td>
+    </tr>
+    <tr>
+        <td colspan="8">TTL</td>
+        <td colspan="8">Protocol</td>
+        <td colspan="16">Checksum</td>
+    </tr>
+    <tr>
+        <td colspan="22">Options (0-40 bytes)</td>
+        <td colspan="10">Padding (4B alignment)</td>
+    </tr>
+    <tr>
+        <td colspan="32">Data</td>
     </tr>
 </table>
 
