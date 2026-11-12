@@ -20,8 +20,10 @@
     </tr>
     <tr>
         <td colspan="16">Identification</td>
-        <td colspan="2">Flags</td>
-        <td colspan="14">Fragment Offset</td>
+        <td>R</td>
+        <td>DF</td>
+        <td>MF</td>
+        <td colspan="13">Fragment Offset</td>
     </tr>
     <tr>
         <td colspan="8">TTL</td>
@@ -35,8 +37,8 @@
         <td colspan="32">Destination Address</td>
     </tr>
     <tr>
-        <td colspan="22">Options (0-40 bytes)</td>
-        <td colspan="10">Padding (4B alignment)</td>
+        <td colspan="24">Options (0-40 bytes)</td>
+        <td colspan="8">Padding (4B alignment)</td>
     </tr>
     <tr>
         <td colspan="32">Data</td>

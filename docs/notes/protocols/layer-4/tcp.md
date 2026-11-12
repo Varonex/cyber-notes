@@ -38,8 +38,8 @@
         <td colspan="16">Urgent Pointer</td>
     </tr>
     <tr>
-        <td colspan="22">Options (0-40 bytes)</td>
-        <td colspan="10">Padding (4B alignment)</td>
+        <td colspan="24">Options (0-40 bytes)</td>
+        <td colspan="8">Padding (4B alignment)</td>
     </tr>
     <tr>
         <td colspan="32">Data</td>
