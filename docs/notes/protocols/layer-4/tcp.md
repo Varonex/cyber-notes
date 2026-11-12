@@ -23,14 +23,14 @@
     <tr>
         <td colspan="4">Header Size</td>
         <td colspan="4">Reserved</td>
-        <td>CWR</td>
-        <td>ECE</td>
-        <td>URG</td>
-        <td>ACK</td>
-        <td>PSH</td>
-        <td>RST</td>
-        <td>SYN</td>
-        <td>FIN</td>
+        <td class="v-text">CWR</td>
+        <td class="v-text">ECE</td>
+        <td class="v-text">URG</td>
+        <td class="v-text">ACK</td>
+        <td class="v-text">PSH</td>
+        <td class="v-text">RST</td>
+        <td class="v-text">SYN</td>
+        <td class="v-text">FIN</td>
         <td colspan="16">Window</td>
     </tr>
     <tr>
