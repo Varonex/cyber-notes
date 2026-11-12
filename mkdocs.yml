@@ -154,11 +154,9 @@ nav:
 
     - "Offensive Security":
         - Web:
-            - Client:
-                - "Cross Site Scripting (XSS)": notes/offensive-security/web/xss.md
-            - Server:
-                - "Path Traversal": notes/offensive-security/web/path-traversal.md
-                - "SQL Injections (SQLi)": notes/offensive-security/web/sqli.md
+            - "Cross Site Scripting (XSS)": notes/offensive-security/web/xss.md
+            - "Path Traversal": notes/offensive-security/web/path-traversal.md
+            - "SQL Injections (SQLi)": notes/offensive-security/web/sqli.md
 
     - "Systems & CLI":
         - Bash:
