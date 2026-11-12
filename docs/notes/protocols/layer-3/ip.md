@@ -70,11 +70,11 @@
     <tr>
         <td colspan="32" rowspan="2">Source Address</td>
     </tr>
-    <tr><td colspan="2"></td></tr>
+    <tr><td colspan="32"></td></tr>
     <tr>
         <td colspan="32" rowspan="2">Destination Address</td>
     </tr>
-    <tr><td colspan="2"></td></tr>
+    <tr><td colspan="32"></td></tr>
     <tr>
         <td colspan="32">Data</td>
     </tr>
