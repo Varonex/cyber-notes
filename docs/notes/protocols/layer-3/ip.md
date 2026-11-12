@@ -29,6 +29,12 @@
         <td colspan="16">Checksum</td>
     </tr>
     <tr>
+        <td colspan="32">Source Address</td>
+    </tr>
+    <tr>
+        <td colspan="32">Destination Address</td>
+    </tr>
+    <tr>
         <td colspan="22">Options (0-40 bytes)</td>
         <td colspan="10">Padding (4B alignment)</td>
     </tr>
