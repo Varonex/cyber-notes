@@ -39,7 +39,7 @@
     </tr>
     <tr>
         <td colspan="22">Options (0-40 bytes)</td>
-        <td colspan="10">Padding (to align on 4 bytes depending on options)</td>
+        <td colspan="10">Padding (4B alignment)</td>
     </tr>
     <tr>
         <td colspan="32">Data</td>
