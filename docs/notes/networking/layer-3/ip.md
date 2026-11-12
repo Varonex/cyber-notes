@@ -3,12 +3,16 @@
 Protocol organized in addresses to communicate between nodes of different networks.
 Two distinct IP versions exist : `IPv4` and `IPv6`.
 
+## Communication modes
+
 | Mode      | Definition               | Description                                                                                                 | Example                                                           |
 | --------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | Unicast   | 1:1 communication.       | Direct communication between an emitter and a single receiver.                                              | Connecting to a website.                                          |
 | Broadcast | 1:All communication.     | A single emitter sends a packet to its entire LAN. Is not routed. Does no longer exist in IPv6.             | - DHCP discover request.<br>- Host ID full of 1's.                |
 | Multicast | 1:Many communication.    | A single emitter can send communications to a dedicated group of machines. Works like a subscription model. | - mDNS (IPv4 support through Class D addresses)<br>- IPv6-native. |
 | Anycast   | 1:Nearest communication. | A myriad of geographically separate servers share the same IP address. Routing determines the nearest host. | Root DNS servers being interconnected but geographically distant. |
+
+## Range types
 
 | Scope                  | Definition                                      |
 | ---------------------- | ----------------------------------------------- |
