@@ -167,26 +167,26 @@ nav:
             - Scripting: notes/systems-and-cli/bash/scripting.md
 
     - Tooling:
-        - "Credentials & Cracking":
-            - Hashcat: notes/tooling/credentials-and-cracking/hashcat.md
-            - "John The Ripper": notes/tooling/credentials-and-cracking/john.md
-        - "Post-Exploitation & AD":
-            - Impacket: notes/tooling/postexploitation-and-ad/impacket.md
-            - Metasploit: notes/tooling/postexploitation-and-ad/metasploit.md
-        - "Recon & Footprinting":
-            - Amass: notes/tooling/recon-and-footprinting/amass.md
-            - Masscan: notes/tooling/recon-and-footprinting/masscan.md
-            - NMap: notes/tooling/recon-and-footprinting/nmap.md
-            - Subfinder: notes/tooling/recon-and-footprinting/subfinder.md
+        - "1. Recon & Footprinting":
+            - Amass: notes/tooling/1-recon-and-footprinting/amass.md
+            - Masscan: notes/tooling/1-recon-and-footprinting/masscan.md
+            - NMap: notes/tooling/1-recon-and-footprinting/nmap.md
+            - Subfinder: notes/tooling/1-recon-and-footprinting/subfinder.md
+        - "2. Vulnerability Scanning":
+            - FFUF: notes/tooling/2-vulnerability-scanning/ffuf.md
+            - GoBuster: notes/tooling/2-vulnerability-scanning/gobuster.md
+            - Nuclei: notes/tooling/2-vulnerability-scanning/nuclei.md
+        - "3. Web Assessment":
+            - "Burp Suite": notes/tooling/3-web-assessment/burpsuite.md
+            - SQLMap: notes/tooling/3-web-assessment/sqlmap.md
+        - "4. Credentials & Cracking":
+            - Hashcat: notes/tooling/4-credentials-and-cracking/hashcat.md
+            - "John The Ripper": notes/tooling/4-credentials-and-cracking/john.md
+        - "5. Post-Exploitation & AD":
+            - Impacket: notes/tooling/5-postexploitation-and-ad/impacket.md
+            - Metasploit: notes/tooling/5-postexploitation-and-ad/metasploit.md
         - "Traffic & Analysis":
             - Wireshark: notes/tooling/traffic-and-analysis/wireshark.md
-        - "Vulnerability Scanning":
-            - FFUF: notes/tooling/vulnerability-scanning/ffuf.md
-            - GoBuster: notes/tooling/vulnerability-scanning/gobuster.md
-            - Nuclei: notes/tooling/vulnerability-scanning/nuclei.md
-        - "Web Assessment":
-            - "Burp Suite": notes/tooling/web-assessment/burpsuite.md
-            - SQLMap: notes/tooling/web-assessment/sqlmap.md
         - "Wireless Security":
             - "Aircrack-ng": notes/tooling/wireless-security/aircrack-ng.md
 
