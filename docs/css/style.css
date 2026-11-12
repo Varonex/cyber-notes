@@ -5,27 +5,30 @@
     display: table;
 }
 
-/* Style pour les schémas de trames réseau */
-.packet-frame
+/* Conteneur externe : gère la bordure extérieure, le margin et les coins arrondis */
+.packet-frame-wrapper
 {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 1.5rem 0;
-    font-family: monospace;
-    font-size: 0.85rem;
-    text-align: center;
     border: 1px solid #30363d;
     border-radius: 6px;
     overflow: hidden;
+    margin: 1.5rem 0;
 }
 
-/* 1. Bordures intérieures par défaut (bas + droite) */
-.packet-frame td
+/* Tableau principal (fils direct du conteneur) */
+.packet-frame-wrapper > table
 {
-    border-right: 1px solid #30363d;
-    border-bottom: 1px solid #30363d;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse; /* Les bordures intérieures fusionnent nativement */
+    font-family: monospace;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Style de toutes les cellules */
+.packet-frame-wrapper > table td
+{
+    border: 1px solid #30363d;
     padding: 8px 2px;
     overflow: hidden;
     white-space: nowrap;
@@ -33,19 +36,8 @@
     vertical-align: middle;
 }
 
-/* 2. Suppression des bordures extérieures pour ne pas doubler la bordure du tableau */
-.packet-frame tr:last-child td
-{
-    border-bottom: none;
-}
-
-.packet-frame td:last-child
-{
-    border-right: none;
-}
-
-/* 3. Ligne d'en-tête (numéros de bits) */
-.packet-frame tr:first-child td
+/* Ligne d'en-tête (numéros de bits : 0 - 7, 8 - 15...) */
+.packet-frame-wrapper > table tr:first-child td
 {
     font-size: 0.75rem;
     font-weight: bold;
@@ -53,16 +45,16 @@
     background-color: rgba(255, 255, 255, 0.03);
 }
 
-/* 4. Colonne d'offset à gauche (uniquement à partir de la ligne 2) */
-.packet-frame tr:not(:first-child) td:first-child
+/* Colonne d'offset à gauche (numéro d'octet, uniquement à partir de la ligne 2) */
+.packet-frame-wrapper > table tr:not(:first-child) td:first-child
 {
     font-weight: bold;
     opacity: 0.7;
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-/* 5. Texte vertical (flags, etc.) */
-.packet-frame td.v-text
+/* Texte vertical (flags TCP, etc.) */
+.packet-frame-wrapper > table td.v-text
 {
     writing-mode: vertical-lr;
     padding: 8px 0;
