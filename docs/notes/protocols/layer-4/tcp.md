@@ -50,7 +50,7 @@
         <td colspan="8">Padding (4B alignment)</td>
     </tr>
     <tr>
-        <td>20<br/>-<br/>60</td>
+        <td>20<br/>to<br/>60</td>
         <td colspan="32">Data</td>
     </tr>
 </table>
