@@ -21,16 +21,7 @@
     overflow: hidden;
 }
 
-/* Ligne d'en-tête (numéros de bits : 0 - 7, 8 - 15...) */
-.packet-frame tr:first-child td
-{
-    font-size: 0.75rem;
-    font-weight: bold;
-    opacity: 0.75;
-    background-color: rgba(255, 255, 255, 0.03); /* Léger fond pour l'en-tête */
-}
-
-/* Chaque ligne. */
+/* 1. Bordures intérieures par défaut (bas + droite) */
 .packet-frame td
 {
     border-right: 1px solid #30363d;
@@ -39,9 +30,10 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    vertical-align: middle;
 }
 
-/* Dernière ligne & colonne. */
+/* 2. Suppression des bordures extérieures pour ne pas doubler la bordure du tableau */
 .packet-frame tr:last-child td
 {
     border-bottom: none;
@@ -52,18 +44,26 @@
     border-right: none;
 }
 
-/* Texte vertical. */
+/* 3. Ligne d'en-tête (numéros de bits) */
+.packet-frame tr:first-child td
+{
+    font-size: 0.75rem;
+    font-weight: bold;
+    opacity: 0.75;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* 4. Colonne d'offset à gauche (uniquement à partir de la ligne 2) */
+.packet-frame tr:not(:first-child) td:first-child
+{
+    font-weight: bold;
+    opacity: 0.7;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* 5. Texte vertical (flags, etc.) */
 .packet-frame td.v-text
 {
     writing-mode: vertical-lr;
     padding: 8px 0;
-    vertical-align: middle;
-}
-
-/* Numéro de ligne. */
-.packet-frame td:first-child
-{
-    font-weight: bold;
-    opacity: 0.7;
-    background-color: rgba(0, 0, 0, 0.05);
 }
