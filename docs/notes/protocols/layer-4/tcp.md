@@ -23,14 +23,14 @@
     <tr>
         <td colspan="4">Header Size</td>
         <td colspan="4">Reserved</td>
-        <td>C</td>
-        <td>E</td>
-        <td>U</td>
-        <td>A</td>
-        <td>P</td>
-        <td>R</td>
-        <td>S</td>
-        <td>F</td>
+        <td>CWR</td>
+        <td>ECE</td>
+        <td>URG</td>
+        <td>ACK</td>
+        <td>PSH</td>
+        <td>RST</td>
+        <td>SYN</td>
+        <td>FIN</td>
         <td colspan="16">Window</td>
     </tr>
     <tr>
