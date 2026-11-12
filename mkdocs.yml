@@ -126,46 +126,71 @@ extra:
 # Navigation aisée.
 nav:
     - "Cyber Notes": index.md
-    - CLI:
-        - Bash:
-            - Awk: notes/cli/bash/awk.md
-            - Basics: notes/cli/bash/basics.md
-            - Networking: notes/cli/bash/networking.md
-            - Process: notes/cli/bash/process.md
-            - Scripting: notes/cli/bash/scripting.md
+
+    - Networking:
+        - "OSI Model": notes/networking/osi-model.md
+        - "Layer 2":
+            - ARP: notes/networking/layer-2/arp.md
+        - "Layer 3":
+            - ICMP: notes/networking/layer-3/icmp.md
+            - IP: notes/networking/layer-3/ip.md
+            - IPSec: notes/networking/layer-3/ipsec.md
+        - "Layer 4":
+            - TCP: notes/networking/layer-4/tcp.md
+            - UDP: notes/networking/layer-4/udp.md
+        - "Layer 6":
+            - TLS: notes/networking/layer-6/tls.md
+        - "Layer 7":
+            - DHCP: notes/networking/layer-7/dhcp.md
+            - DNS: notes/networking/layer-7/dns.md
+            - Emails: notes/networking/layer-7/email.md
+            - FTP: notes/networking/layer-7/ftp.md
+            - HTTP: notes/networking/layer-7/http.md
+            - Kerberos: notes/networking/layer-7/kerberos.md
+            - LDAP: notes/networking/layer-7/ldap.md
+            - SMB: notes/networking/layer-7/smb.md
+            - SNMP: notes/networking/layer-7/snmp.md
+            - SSH: notes/networking/layer-7/ssh.md
 
     - "Offensive Security":
-        - Domains:
-            - Web:
-                - Client:
-                    - "Cross Site Scripting (XSS)": notes/offensive-security/domains/web/client/xss.md
-                - Server:
-                    - "Path Traversal": notes/offensive-security/domains/web/server/path-traversal.md
-                    - "SQL Injections (SQLi)": notes/offensive-security/domains/web/server/sqli.md
+        - Web:
+            - Client:
+                - "Cross Site Scripting (XSS)": notes/offensive-security/web/xss.md
+            - Server:
+                - "Path Traversal": notes/offensive-security/web/path-traversal.md
+                - "SQL Injections (SQLi)": notes/offensive-security/web/sqli.md
 
-        - Tooling:
-            - "Credentials & Cracking":
-                - Hashcat: notes/offensive-security/tooling/credentials-and-cracking/hashcat.md
-                - "John The Ripper": notes/offensive-security/tooling/credentials-and-cracking/john.md
-            - "Post-Exploitation & AD":
-                - Impacket: notes/offensive-security/tooling/postexploitation-and-ad/impacket.md
-                - Metasploit: notes/offensive-security/tooling/postexploitation-and-ad/metasploit.md
-            - "Recon & Footprinting":
-                - Amass: notes/offensive-security/tooling/recon-and-footprinting/amass.md
-                - Masscan: notes/offensive-security/tooling/recon-and-footprinting/masscan.md
-                - NMap: notes/offensive-security/tooling/recon-and-footprinting/nmap.md
-                - Subfinder: notes/offensive-security/tooling/recon-and-footprinting/subfinder.md
-            - "Traffic & Analysis":
-                - Wireshark: notes/offensive-security/tooling/traffic-and-analysis/wireshark.md
-            - "Vulnerability Scanning":
-                - FFUF: notes/offensive-security/tooling/vulnerability-scanning/ffuf.md
-                - GoBuster: notes/offensive-security/tooling/vulnerability-scanning/gobuster.md
-                - Nuclei: notes/offensive-security/tooling/vulnerability-scanning/nuclei.md
-            - "Web Assessment":
-                - "Burp Suite": notes/offensive-security/tooling/web-assessment/burpsuite.md
-                - SQLMap: notes/offensive-security/tooling/web-assessment/sqlmap.md
-            - "Wireless Security":
-                - "Aircrack-ng": notes/offensive-security/tooling/wireless-security/aircrack-ng.md
+    - "Systems & CLI":
+        - Bash:
+            - Awk: notes/systems-and-cli/bash/awk.md
+            - Basics: notes/systems-and-cli/bash/basics.md
+            - Networking: notes/systems-and-cli/bash/networking.md
+            - Process: notes/systems-and-cli/bash/process.md
+            - Scripting: notes/systems-and-cli/bash/scripting.md
+
+    - Tooling:
+        - "Credentials & Cracking":
+            - Hashcat: notes/tooling/credentials-and-cracking/hashcat.md
+            - "John The Ripper": notes/tooling/credentials-and-cracking/john.md
+        - "Post-Exploitation & AD":
+            - Impacket: notes/tooling/postexploitation-and-ad/impacket.md
+            - Metasploit: notes/tooling/postexploitation-and-ad/metasploit.md
+        - "Recon & Footprinting":
+            - Amass: notes/tooling/recon-and-footprinting/amass.md
+            - Masscan: notes/tooling/recon-and-footprinting/masscan.md
+            - NMap: notes/tooling/recon-and-footprinting/nmap.md
+            - Subfinder: notes/tooling/recon-and-footprinting/subfinder.md
+        - "Traffic & Analysis":
+            - Wireshark: notes/tooling/traffic-and-analysis/wireshark.md
+        - "Vulnerability Scanning":
+            - FFUF: notes/tooling/vulnerability-scanning/ffuf.md
+            - GoBuster: notes/tooling/vulnerability-scanning/gobuster.md
+            - Nuclei: notes/tooling/vulnerability-scanning/nuclei.md
+        - "Web Assessment":
+            - "Burp Suite": notes/tooling/web-assessment/burpsuite.md
+            - SQLMap: notes/tooling/web-assessment/sqlmap.md
+        - "Wireless Security":
+            - "Aircrack-ng": notes/tooling/wireless-security/aircrack-ng.md
 
     - "Useful websites": notes/useful-websites.md
 
