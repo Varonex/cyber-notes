@@ -41,11 +41,11 @@ An address comes with a mask : `W'.X'.Y'.Z'`. The mask separates the Net ID from
 	- `169.254.0.0/16`: link local, doesn't get routed at all to keep packets in the network.
 
 !!! note "Behaviors"
-- `Address & Mask = Net ID`. All 1's give the Net ID.
-- `Address & !Mask = Host ID`.
-- If the Host ID is full of 0's, the address is a network address.
-- If the Host ID is full of 1's, the address is a broadcast address.
-- Subnetting consists in toggling additional 0's into 1's from left to right on the mask to create subnets.
+	- `Address & Mask = Net ID`. All 1's give the Net ID.
+	- `Address & !Mask = Host ID`.
+	- If the Host ID is full of 0's, the address is a network address.
+	- If the Host ID is full of 1's, the address is a broadcast address.
+	- Subnetting consists in toggling additional 0's into 1's from left to right on the mask to create subnets.
 
 ### Header
 
