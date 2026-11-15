@@ -190,7 +190,7 @@ nav:
         - "Wireless Security":
             - "Aircrack-ng": notes/tooling/wireless-security/aircrack-ng.md
 
-    - "Useful websites": notes/useful-websites.md
+    - "Useful websites & OSINT": notes/useful-websites-and-osint.md
 
     - Writeups:
         - "Over The Wire":
