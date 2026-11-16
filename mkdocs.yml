@@ -165,6 +165,10 @@ nav:
             - Networking: notes/systems-and-cli/bash/networking.md
             - Process: notes/systems-and-cli/bash/process.md
             - Scripting: notes/systems-and-cli/bash/scripting.md
+        - Docker:
+            - "Docker CLI": notes/systems-and-cli/docker/docker-cli.md
+            - "Docker Compose": notes/systems-and-cli/docker/docker-compose.md
+            - "Dockerfile": notes/systems-and-cli/docker/dockerfile.md
 
     - Tooling:
         - "1. Recon & Footprinting":
