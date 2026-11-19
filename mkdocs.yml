@@ -195,7 +195,3 @@ nav:
             - "Aircrack-ng": notes/tooling/wireless-security/aircrack-ng.md
 
     - "Useful websites & OSINT": notes/useful-websites-and-osint.md
-
-    - Writeups:
-        - "Over The Wire":
-            - Bandit: notes/writeups/over-the-wire/bandit.md
